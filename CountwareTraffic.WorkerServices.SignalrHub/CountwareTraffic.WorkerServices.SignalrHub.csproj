@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.13" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
+    <PackageReference Include="Serilog.Sinks.Graylog" Version="2.2.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CountwareTraffic.WorkerServices.SignalrHub.Application\CountwareTraffic.WorkerServices.SignalrHub.Application.csproj" />
+    <ProjectReference Include="..\Sensormatic.Tool.Common\Sensormatic.Tool.Common.csproj" />
+    <ProjectReference Include="..\Sensormatic.Tool.QueueModel\Sensormatic.Tool.QueueModel.csproj" />
+    <ProjectReference Include="..\Sensormatic.Tool.Queue\Sensormatic.Tool.Queue.csproj" />
+  </ItemGroup>
+
+</Project>

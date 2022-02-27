@@ -1,0 +1,134 @@
+﻿@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="~/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>@ViewData["Title"] - @AppDomain.CurrentDomain.FriendlyName</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/paper-dashboard.css?v=2.1.0" rel="stylesheet" />
+
+</head>
+
+
+<body onload="startTime()">
+    <div class="wrapper ">
+        <div class="sidebar" data-color="orange" data-active-color="danger">
+            <div class="logo">
+                <a class="simple-text logo-mini">
+                    <div class="logo-image-small">
+                        <img src="~/images/monitor.png">
+                    </div>
+                </a>
+                <a class="simple-text logo-normal">
+                    Job Monitor
+                </a>
+            </div>
+            <div class="sidebar-wrapper">
+                <ul class="nav">
+                    <li class="@ViewData["IndexActive"]">
+                        <a asp-action="Index" asp-controller="Home">
+                            <i class="fa fa-cogs"></i>
+                            <p>Live Jobs</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
+                <div class="container-fluid">
+                    <div class="navbar-wrapper">
+                        <div class="navbar-toggle">
+                            <button type="button" class="navbar-toggler">
+                                <span class="navbar-toggler-bar bar1"></span>
+                                <span class="navbar-toggler-bar bar2"></span>
+                                <span class="navbar-toggler-bar bar3"></span>
+                            </button>
+                        </div>
+                        <a class="navbar-brand" href="#pablo">@ViewData["PageName"]</a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link btn-magnify text-dark">
+                                    <i class="fa fa-clock-o"></i>
+                                    <p>
+                                        <span id="clock"></span>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn-magnify connectionStatus text-danger">
+                                    <i class="fa fa-plug"></i>
+                                    <p>
+                                        <span id="connectionStatus">Offline</span>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="btnRefresh" title="Refresh" class="nav-link btn-rotate" href="#">
+                                    <i class="nc-icon nc-refresh-69"></i>
+                                    <p>
+                                        <span class="d-lg-none d-md-block">Refresh</span>
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="content">
+                <div class="container-fluid">
+
+                    @RenderBody()
+                </div>
+
+            </div>
+            <footer class="footer footer-black  footer-white ">
+            </footer>
+        </div>
+    </div>
+
+    <script src="~/js/core/jquery.min.js"></script>
+    <script src="~/js/core/popper.min.js"></script>
+    <script src="~/js/core/bootstrap.min.js"></script>
+    <script src="~/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <script src="~/js/plugins/bootstrap-notify.js"></script>
+    <script src="~/js/paper-dashboard.min.js?v=2.1.0" type="text/javascript"></script>
+    <script src="~/js/clock.js"></script>
+    <script src="~/js/core/signalR.min.js"></script>
+    <script src="~/js/signalR-connection.js"></script>
+
+
+    @if (ViewData["ErrorMessage"] != null)
+    {
+        <script>
+        $.notify({
+            icon: "nc-icon nc-alert-circle-i",
+            message: "@ViewData["ErrorMessage"]"
+        },
+            {
+                type: 'danger',
+                timer: 8000,
+            }
+        )
+        </script>
+    }
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

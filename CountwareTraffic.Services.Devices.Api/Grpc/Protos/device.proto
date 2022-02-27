@@ -1,0 +1,127 @@
+syntax = "proto3";
+
+option csharp_namespace = "CountwareTraffic.Services.Devices.Grpc";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+import "Grpc/Protos/baseDevice.proto";
+
+package device;
+
+service Device {
+    rpc GetDeviceById(GetDeviceRequest) returns (GetDeviceDetailResponse){}
+    rpc GetDevices(GetDevicesRequest) returns (DevicePagingResponse){}
+    rpc ChangeDevice(UpdateDeviceRequest) returns (baseDevice.UpdateSuccessResponse){}
+    rpc DeleteDevice(DeleteDeviceRequest) returns (baseDevice.DeleteSuccessResponse){}
+    rpc AddDevice(CreateDeviceRequest) returns (baseDevice.CreateSuccessResponse){}
+    rpc GetDeviceTypes(GetDeviceTypesRequest) returns(GetDeviceTypesResponse){}
+    rpc GetDeviceStatuses(GetDeviceStatusesRequest) returns(GetDeviceStatusesResponse){}
+}
+
+
+/*REQUESTS*/
+message GetDeviceRequest {
+	string DeviceId = 1;
+}
+
+message GetDevicesRequest {
+	string SubAreaId = 1;
+    baseDevice.PagingRequest PagingRequest = 2;
+}
+
+message UpdateDeviceRequest{
+    string DeviceId = 1;
+    string Name = 2;
+    google.protobuf.StringValue Description = 3;
+    string Model = 4;
+    int32 DeviceStatusId = 5;
+    int32 DeviceTypeId = 6;
+    string IpAddress = 7;
+    int32 Port = 8;
+    google.protobuf.StringValue Identity = 9; 
+    google.protobuf.StringValue Password = 10; 
+    google.protobuf.StringValue UniqueId = 11; 
+    string MacAddress = 12; 
+}
+
+message DeleteDeviceRequest{
+    string DeviceId = 1;
+}
+
+message CreateDeviceRequest{
+    string SubAreaId = 1;
+    string Name = 2;
+    google.protobuf.StringValue Description = 3;
+    string Model = 4;
+    int32 DeviceTypeId = 5;
+    string IpAddress = 6;
+    int32 Port = 7;
+    google.protobuf.StringValue Identity = 8; 
+    google.protobuf.StringValue Password = 9; 
+    google.protobuf.StringValue UniqueId = 10; 
+    string MacAddress = 11; 
+}
+
+message GetDeviceTypesRequest{
+
+}
+
+message GetDeviceStatusesRequest{
+
+}
+
+
+
+/*RESPONSES*/
+message DevicePagingResponse {
+    int32 TotalCount = 1;
+    int32 Page = 2;
+    int32 Limit = 3;
+    bool HasNextPage = 4;
+    google.protobuf.Int32Value Next = 5;
+    google.protobuf.Int32Value Prev = 6;
+    repeated DeviceDetail DeviceDetails  = 7;
+}
+
+message GetDeviceDetailResponse {
+    DeviceDetail DeviceDetail  = 1;
+}
+
+message GetDeviceTypesResponse{
+    repeated DeviceType DeviceTypes  = 1;
+}
+
+message GetDeviceStatusesResponse{
+    repeated DeviceStatus DeviceStatuses  = 1;
+}
+
+
+/*MODELS*/
+message DeviceDetail
+{
+    string SubAreaId = 1;
+    string Name = 2;
+    google.protobuf.StringValue Description = 3;
+    string Model = 4;
+    int32 DeviceStatusId = 5;
+    int32 DeviceTypeId = 6;
+    string IpAddress = 7;
+    int32 Port = 8;
+    google.protobuf.StringValue Identity = 9; 
+    google.protobuf.StringValue Password = 10; 
+    google.protobuf.StringValue UniqueId = 11; 
+    string MacAddress = 12; 
+    string Id = 13;
+    baseDevice.Audit Audit = 14;
+    string DeviceStatusName = 15;
+    string DeviceTypeName = 16;
+}
+message DeviceType{
+    int32 Id = 1; 
+    string Name = 2;
+}
+
+message DeviceStatus{
+    int32 Id = 1; 
+    string Name = 2;
+}

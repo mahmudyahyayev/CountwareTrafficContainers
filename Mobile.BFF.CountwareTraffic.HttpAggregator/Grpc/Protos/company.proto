@@ -1,0 +1,102 @@
+syntax = "proto3";
+
+option csharp_namespace = "CountwareTraffic.Services.Companies.Grpc";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+import "Grpc/Protos/baseArea.proto";
+
+package company;
+
+service Company {
+    rpc GetCompanyById(GetCompanyRequest) returns (GetCompanyDetailResponse){}
+    rpc GetCompanies(GetCompaniesRequest) returns (CompanyPagingResponse){}
+    rpc ChangeCompany(UpdateCompanyRequest) returns (baseArea.UpdateSuccessResponse){}
+    rpc DeleteCompany(DeleteCompanyRequest) returns (baseArea.DeleteSuccessResponse){}
+    rpc AddCompany(CreateCompanyRequest) returns (baseArea.CreateSuccessResponse){}
+}
+
+/*REQUESTS --BEGIN*/
+message GetCompanyRequest{
+    string CompanyId = 1;
+}
+
+message GetCompaniesRequest{
+     baseArea.PagingRequest PagingRequest = 1;
+}
+
+message CreateCompanyRequest{
+    string Name = 1;
+    google.protobuf.StringValue Description = 2;
+    google.protobuf.StringValue GsmNumber = 3;
+    google.protobuf.StringValue PhoneNumber = 4;
+    google.protobuf.StringValue EmailAddress = 5;
+    google.protobuf.StringValue FaxNumber = 6;
+    google.protobuf.StringValue Street = 7;
+    google.protobuf.StringValue City = 8;
+    google.protobuf.StringValue State = 9;
+    google.protobuf.StringValue Country = 10;
+    google.protobuf.StringValue ZipCode = 11;
+    google.protobuf.DoubleValue Latitude = 12;
+    google.protobuf.DoubleValue Longitude = 13;
+}
+
+message UpdateCompanyRequest{
+    string Name = 1;
+    google.protobuf.StringValue Description = 2;
+    google.protobuf.StringValue GsmNumber = 3;
+    google.protobuf.StringValue PhoneNumber = 4;
+    google.protobuf.StringValue EmailAddress = 5;
+    google.protobuf.StringValue FaxNumber = 6;
+    google.protobuf.StringValue Street = 7;
+    google.protobuf.StringValue City = 8;
+    google.protobuf.StringValue State = 9;
+    google.protobuf.StringValue Country = 10;
+    google.protobuf.StringValue ZipCode = 11;
+    google.protobuf.DoubleValue Latitude = 12;
+    google.protobuf.DoubleValue Longitude = 13;
+    string CompanyId = 14;
+}
+
+message DeleteCompanyRequest{
+     string CompanyId = 1;
+}
+
+
+
+/*RESPONSES --BEGIN*/
+message CompanyPagingResponse{
+    int32 TotalCount = 1;
+    int32 Page = 2;
+    int32 Limit = 3;
+    bool HasNextPage = 4;
+    google.protobuf.Int32Value Next = 5;
+    google.protobuf.Int32Value Prev = 6;
+    repeated CompanyDetail CompanyDetails  = 7;
+}
+
+message GetCompanyDetailResponse{
+    CompanyDetail CompanyDetail  = 1;
+}
+
+
+
+
+/*NODELS --BEGIN*/
+message CompanyDetail{
+    string Id = 1;
+    baseArea.Audit Audit = 2;
+    string Name = 3;
+    google.protobuf.StringValue Description = 4;
+    google.protobuf.StringValue GsmNumber = 5;
+    google.protobuf.StringValue PhoneNumber = 6;
+    google.protobuf.StringValue EmailAddress = 7;
+    google.protobuf.StringValue FaxNumber = 8;
+    google.protobuf.StringValue Street = 9;
+    google.protobuf.StringValue City = 10;
+    google.protobuf.StringValue State = 11;
+    google.protobuf.StringValue Country = 12;
+    google.protobuf.StringValue ZipCode = 13;
+    google.protobuf.DoubleValue Latitude = 14;
+    google.protobuf.DoubleValue Longitude = 15;
+}

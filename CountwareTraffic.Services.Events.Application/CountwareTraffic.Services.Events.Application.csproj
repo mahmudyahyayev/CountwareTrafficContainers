@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Folder Include="Events\Rejected\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Convey" Version="0.5.518" />
+		<PackageReference Include="Convey.CQRS.Commands" Version="0.5.518" />
+		<PackageReference Include="Convey.CQRS.Events" Version="0.5.518" />
+		<PackageReference Include="Convey.CQRS.Queries" Version="0.5.518" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\CountwareTraffic.Services.Events.Core\CountwareTraffic.Services.Events.Core.csproj" />
+		<ProjectReference Include="..\Sensormatic.Tool.Core\Sensormatic.Tool.Core.csproj" />
+		<ProjectReference Include="..\Sensormatic.Tool.QueueModel\Sensormatic.Tool.QueueModel.csproj" />
+		<ProjectReference Include="..\Sensormatic.Tool.Queue\Sensormatic.Tool.Queue.csproj" />
+	</ItemGroup>
+
+</Project>

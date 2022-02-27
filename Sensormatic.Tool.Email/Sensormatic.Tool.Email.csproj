@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.13" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Models\Externals\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Sensormatic.Tool.Ioc\Sensormatic.Tool.Ioc.csproj" />
+	</ItemGroup>
+
+</Project>

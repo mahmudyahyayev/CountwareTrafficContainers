@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
+		<PackageReference Include="NEST" Version="7.16.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Sensormatic.Tool.Common\Sensormatic.Tool.Common.csproj" />
+		<ProjectReference Include="..\Sensormatic.Tool.Core\Sensormatic.Tool.Core.csproj" />
+		<ProjectReference Include="..\Sensormatic.Tool.Ioc\Sensormatic.Tool.Ioc.csproj" />
+	</ItemGroup>
+
+</Project>

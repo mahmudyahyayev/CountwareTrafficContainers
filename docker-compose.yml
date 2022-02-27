@@ -1,0 +1,326 @@
+version: '3.4'
+
+services:
+
+#-------------------------------------------------------------------------sql mssql----------------------------------------------------------------------------------#
+  sqldata:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+
+
+#-------------------------------------------------------------------------nosql mongo---------------------------------------------------------------------------------#
+  nosqldata:
+    image: mongo
+
+ 
+#-------------------------------------------------------------------------redis cache---------------------------------------------------------------------------------#
+  redis:
+    image: redis:latest
+
+
+#-------------------------------------------------------------------------gateway-------------------------------------------------------------------------------------#
+  ocelot.gateway:
+    image: ocelot.gateway
+    build:
+      context: .
+      dockerfile: OcelotApiGw/Dockerfile
+      args:
+      - NODE_ENV=development
+
+
+#-------------------------------------------------------------------------bff httpaggregator---------------------------------------------------------------------------#
+  mobile.bff:
+    image: mobile.bff
+    build:
+      context: .
+      dockerfile: Mobile.BFF.CountwareTraffic.HttpAggregator/Dockerfile
+      args:
+      - NODE_ENV=development
+    depends_on:
+      - graylog
+
+
+#------------------------------------------------------------------------company microservice--------------------------------------------------------------------------#
+  company.api-grpc:
+    image: company.api-grpc
+    build:
+      context: .
+      dockerfile: CountwareTraffic.Services.Companies.Api/Dockerfile
+      args:
+      - NODE_ENV=development
+    depends_on:
+      - sqldata
+      - graylog
+      - rabbitmq
+    links:
+      - rabbitmq
+
+
+#------------------------------------------------------------------------device microservice---------------------------------------------------------------------------#
+  device.api-grpc:
+    image: device.api-grpc
+    build:
+      context: .
+      dockerfile: CountwareTraffic.Services.Devices.Api/Dockerfile
+      args:
+      - NODE_ENV=development
+    depends_on:
+      - sqldata
+      - graylog
+      - rabbitmq
+    links:
+      - rabbitmq
+
+
+#------------------------------------------------------------------------event microservice-----------------------------------------------------------------------------#
+  event.api-grpc:
+    image: event.api-grpc
+    build:
+      context: .
+      dockerfile: CountwareTraffic.Services.Events.Api/Dockerfile
+      args:
+      - NODE_ENV=development
+    depends_on:
+      - sqldata
+      - graylog
+      - rabbitmq
+      - es01
+      - es02
+      - es03
+    links:
+      - rabbitmq
+
+
+#------------------------------------------------------------------------identity server comunication------------------------------------------------------------------#
+  identityserver.client-grpc:
+    image: identityserver.client-grpc
+    build:
+      context: .
+      dockerfile: CountwareTraffic.Services.Users.Api/Dockerfile
+      args:
+      - NODE_ENV=development
+
+
+#------------------------------------------------------------------------ sms-consumer----------------------------------------------------------------------------------#
+  sms-consumer:
+    image:  sms-consumer
+    build:
+      context: .
+      dockerfile: CountwareTraffic.WorkerServices.Sms.Consumer/Dockerfile
+      args:
+      - NODE_ENV=development
+    depends_on:
+      - sqldata
+      - rabbitmq
+      - graylog
+      - nosqldata
+    links:
+      - rabbitmq
+
+
+#------------------------------------------------------------------------ email-consumer----------------------------------------------------------------------------------#
+  email-consumer:
+    image:  email-consumer
+    build:
+      context: .
+      dockerfile: CountwareTraffic.WorkerServices.Email.Consumer/Dockerfile
+      args:
+      - NODE_ENV=development
+    depends_on:
+      - sqldata
+      - rabbitmq
+      - graylog
+      - nosqldata
+    links:
+      - rabbitmq
+
+
+#------------------------------------------------------------------------ signalR-consumer----------------------------------------------------------------------------------#
+  signalr-consumer:
+    image: signalr-consumer
+    build:
+      context: .
+      dockerfile: CountwareTraffic.WorkerServices.SignalrHub/Dockerfile
+      args:
+      - NODE_ENV=development
+    depends_on:
+      - rabbitmq
+      - graylog
+    links:
+      - rabbitmq
+
+#------------------------------------------------------------------------ event-listener-scheduler----------------------------------------------------------------------------------#
+  event-listener-scheduler:
+    image: event-listener-scheduler
+    build:
+      context: .
+      dockerfile: CountwareTraffic.Services.Events.Listener.Scheduler/Dockerfile
+      args:
+      - NODE_ENV=development
+    depends_on:
+      - sqldata
+      - rabbitmq
+      - graylog
+    links:
+      - rabbitmq
+
+
+#------------------------------------------------------------------------ audit-log-consumer----------------------------------------------------------------------------------#
+  audit-log-consumer:
+    image: audit-log-consumer
+    build:
+      context: .
+      dockerfile: CountwareTraffic.WorkerServices.Audit.Consumer/Dockerfile
+      args:
+      - NODE_ENV=development
+    depends_on:
+      - rabbitmq
+      - nosqldata
+      - graylog
+    links:
+      - rabbitmq
+
+
+#------------------------------------------------------------------------graylog-mongo-elastic-------------------------------------------------------------------------#
+  mongodb:
+    image: mongo:3
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.5.4
+    environment:
+      - http.host=0.0.0.0
+      - transport.host=localhost
+      - network.host=0.0.0.0
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    mem_limit: 1g
+  graylog:
+    image: graylog/graylog:2.5
+    environment:
+      - GRAYLOG_PASSWORD_SECRET=somepasswordpepper
+      # username:admin password:admin
+      - GRAYLOG_ROOT_PASSWORD_SHA2=8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918
+      - GRAYLOG_WEB_ENDPOINT_URI=http://127.0.0.1:9000/api
+    links:
+      - mongodb:mongo
+      - elasticsearch
+    depends_on:
+      - mongodb
+      - elasticsearch
+    ports:
+      - 9000:9000        # Graylog web interface and REST API
+      - 514:514          # Syslog TCP
+      - 514:514/udp      # Syslog UDP
+      - 12201:12201      # GELF TCP
+      - 12201:12201/udp  # GELF UDP
+
+
+#------------------------------------------------------------------------elastic search--------------------------------------------------------------------------------#
+  es01:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.2.0
+    container_name: es01
+    environment:
+      - node.name=es01
+      - cluster.name=es-docker-cluster
+      - discovery.seed_hosts=es02,es03
+      - cluster.initial_master_nodes=es01,es02,es03
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - data01:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+
+  es02:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.2.0
+    container_name: es02
+    environment:
+      - node.name=es02
+      - cluster.name=es-docker-cluster
+      - discovery.seed_hosts=es01,es03
+      - cluster.initial_master_nodes=es01,es02,es03
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - data02:/usr/share/elasticsearch/data
+
+  es03:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.2.0
+    container_name: es03
+    environment:
+      - node.name=es03
+      - cluster.name=es-docker-cluster
+      - discovery.seed_hosts=es01,es02
+      - cluster.initial_master_nodes=es01,es02,es03
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - data03:/usr/share/elasticsearch/data
+
+
+#------------------------------------------------------------------------rabbit mq---------------------------------------------------------------------------------------#
+  rabbitmq:
+    container_name: "rabbitmq"
+    image: heidiks/rabbitmq-delayed-message-exchange:latest
+    environment:
+        - RABBITMQ_DEFAULT_USER=countware
+        - RABBITMQ_DEFAULT_PASS=7ba3f467efe219b45783b4618b49bf69
+    volumes:
+      - "./data:/var/lib/rabbitmq/mnesia/"
+    ports:
+        - '5672:5672'
+        - '15672:15672'
+
+
+#------------------------------------------------------------------------nuget server------------------------------------------------------------------------------------#
+  nugetserver:
+    image: loicsharma/baget:latest
+    container_name: nugetserver
+    restart: always
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - Storage__Type=FileSystem
+      - Storage__Path=/var/baget/packages
+      - Database__Type=Sqlite
+      - Database__ConnectionString=Data Source=/var/baget/baget.db
+      - Search__Type=Database
+      - ApiKey=tuq6kpGCnMh7vRLztruunAMBagZU2fj2k663T
+      - AllowPackageOverwrites=true
+      - PackageDeletionBehavior=HardDelete
+      - Mirror__Enabled=true
+    volumes:
+      - baget-data:/var/baget
+    ports:
+      - 5555:80
+    
+
+#------------------------------------------------------------------------volumes-----------------------------------------------------------------------------------------#
+volumes:
+  data01:
+    driver: local
+  data02:
+    driver: local
+  data03:
+    driver: local
+  baget-data:
+      name: baget-data
+
+
+
+
+
+
+

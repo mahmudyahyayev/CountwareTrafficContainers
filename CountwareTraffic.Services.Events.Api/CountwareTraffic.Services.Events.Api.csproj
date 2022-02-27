@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>c169ea9d-72a0-4741-b9cb-17bdb1356839</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
+    <PackageReference Include="Serilog.Sinks.Graylog" Version="2.2.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CountwareTraffic.Services.Events.Infrastructure\CountwareTraffic.Services.Events.Infrastructure.csproj" />
+    <ProjectReference Include="..\Observability\Observability.csproj" />
+    <ProjectReference Include="..\Sensormatic.Tool.Api\Sensormatic.Tool.Api.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<PackageLicenseExpression>Sensormatic</PackageLicenseExpression>
+		<Description>This is Common Structure</Description>
+		<Version>1.0.15</Version>
+	</PropertyGroup>
+
+</Project>

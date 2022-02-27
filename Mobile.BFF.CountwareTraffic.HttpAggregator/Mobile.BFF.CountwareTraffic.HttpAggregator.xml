@@ -1,0 +1,1293 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Mobile.BFF.CountwareTraffic.HttpAggregator</name>
+    </assembly>
+    <members>
+        <member name="T:Mobile.BFF.CountwareTraffic.HttpAggregator.Grpc.UnaryCallgRPCServiceMethodHandler`2">
+            <summary>
+            Tum unary metotlari try catch icerisinde call ede bilmek icin yazilmisdir. mahmud yhayayev
+            </summary>
+            <typeparam name="TRequest"></typeparam>
+            <typeparam name="TResponse"></typeparam>
+            <param name="request"></param>
+            <param name="headers"></param>
+            <param name="deadline"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.AreaReflection">
+            <summary>Holder for reflection information generated from Grpc/Protos/area.proto</summary>
+        </member>
+        <member name="P:CountwareTraffic.Services.Companies.Grpc.AreaReflection.Descriptor">
+            <summary>File descriptor for Grpc/Protos/area.proto</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.GetAreaRequest">
+             <summary>
+            REQUESTS
+             </summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.GetAreaRequest.AreaIdFieldNumber">
+            <summary>Field number for the "AreaId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.GetAreasRequest.DistrictIdFieldNumber">
+            <summary>Field number for the "DistrictId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.GetAreasRequest.PagingRequestFieldNumber">
+            <summary>Field number for the "PagingRequest" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateAreaRequest.AreaIdFieldNumber">
+            <summary>Field number for the "AreaId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateAreaRequest.NameFieldNumber">
+            <summary>Field number for the "Name" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateAreaRequest.DescriptionFieldNumber">
+            <summary>Field number for the "Description" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateAreaRequest.AreaTypIdFieldNumber">
+            <summary>Field number for the "AreaTypId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateAreaRequest.GsmNumberFieldNumber">
+            <summary>Field number for the "GsmNumber" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateAreaRequest.PhoneNumberFieldNumber">
+            <summary>Field number for the "PhoneNumber" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateAreaRequest.EmailAddressFieldNumber">
+            <summary>Field number for the "EmailAddress" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateAreaRequest.FaxNumberFieldNumber">
+            <summary>Field number for the "FaxNumber" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateAreaRequest.StreetFieldNumber">
+            <summary>Field number for the "Street" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateAreaRequest.LatitudeFieldNumber">
+            <summary>Field number for the "Latitude" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateAreaRequest.LongitudeFieldNumber">
+            <summary>Field number for the "Longitude" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateAreaRequest.PhoneNumber2FieldNumber">
+            <summary>Field number for the "PhoneNumber2" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.DeleteAreaRequest.AreaIdFieldNumber">
+            <summary>Field number for the "AreaId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateAreaRequest.DistrictIdFieldNumber">
+            <summary>Field number for the "DistrictId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateAreaRequest.NameFieldNumber">
+            <summary>Field number for the "Name" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateAreaRequest.DescriptionFieldNumber">
+            <summary>Field number for the "Description" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateAreaRequest.AreaTypeIdFieldNumber">
+            <summary>Field number for the "AreaTypeId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateAreaRequest.GsmNumberFieldNumber">
+            <summary>Field number for the "GsmNumber" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateAreaRequest.PhoneNumberFieldNumber">
+            <summary>Field number for the "PhoneNumber" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateAreaRequest.EmailAddressFieldNumber">
+            <summary>Field number for the "EmailAddress" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateAreaRequest.FaxNumberFieldNumber">
+            <summary>Field number for the "FaxNumber" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateAreaRequest.StreetFieldNumber">
+            <summary>Field number for the "Street" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateAreaRequest.LatitudeFieldNumber">
+            <summary>Field number for the "Latitude" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateAreaRequest.LongitudeFieldNumber">
+            <summary>Field number for the "Longitude" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateAreaRequest.PhoneNumber2FieldNumber">
+            <summary>Field number for the "PhoneNumber2" field.</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.AreaPagingResponse">
+             <summary>
+            RESPONSES
+             </summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.AreaPagingResponse.TotalCountFieldNumber">
+            <summary>Field number for the "TotalCount" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.AreaPagingResponse.PageFieldNumber">
+            <summary>Field number for the "Page" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.AreaPagingResponse.LimitFieldNumber">
+            <summary>Field number for the "Limit" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.AreaPagingResponse.HasNextPageFieldNumber">
+            <summary>Field number for the "HasNextPage" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.AreaPagingResponse.NextFieldNumber">
+            <summary>Field number for the "Next" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.AreaPagingResponse.PrevFieldNumber">
+            <summary>Field number for the "Prev" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.AreaPagingResponse.AreaDetailsFieldNumber">
+            <summary>Field number for the "AreaDetails" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.GetAreaDetailResponse.AreaDetailFieldNumber">
+            <summary>Field number for the "AreaDetail" field.</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.AreaDetail">
+             <summary>
+            MODELS
+             </summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.AreaDetail.IdFieldNumber">
+            <summary>Field number for the "Id" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.AreaDetail.AuditFieldNumber">
+            <summary>Field number for the "Audit" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.AreaDetail.DistrictIdFieldNumber">
+            <summary>Field number for the "DistrictId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.AreaDetail.NameFieldNumber">
+            <summary>Field number for the "Name" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.AreaDetail.DescriptionFieldNumber">
+            <summary>Field number for the "Description" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.AreaDetail.AreaTypeNameFieldNumber">
+            <summary>Field number for the "AreaTypeName" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.AreaDetail.GsmNumberFieldNumber">
+            <summary>Field number for the "GsmNumber" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.AreaDetail.PhoneNumberFieldNumber">
+            <summary>Field number for the "PhoneNumber" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.AreaDetail.EmailAddressFieldNumber">
+            <summary>Field number for the "EmailAddress" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.AreaDetail.FaxNumberFieldNumber">
+            <summary>Field number for the "FaxNumber" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.AreaDetail.StreetFieldNumber">
+            <summary>Field number for the "Street" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.AreaDetail.LatitudeFieldNumber">
+            <summary>Field number for the "Latitude" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.AreaDetail.LongitudeFieldNumber">
+            <summary>Field number for the "Longitude" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.AreaDetail.PhoneNumber2FieldNumber">
+            <summary>Field number for the "PhoneNumber2" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.AreaDetail.AreaTypeIdFieldNumber">
+            <summary>Field number for the "AreaTypeId" field.</summary>
+        </member>
+        <member name="P:CountwareTraffic.Services.Companies.Grpc.Area.Descriptor">
+            <summary>Service descriptor</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.Area.AreaClient">
+            <summary>Client for Area</summary>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.Area.AreaClient.#ctor(Grpc.Core.ChannelBase)">
+            <summary>Creates a new client for Area</summary>
+            <param name="channel">The channel to use to make remote calls.</param>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.Area.AreaClient.#ctor(Grpc.Core.CallInvoker)">
+            <summary>Creates a new client for Area that uses a custom <c>CallInvoker</c>.</summary>
+            <param name="callInvoker">The callInvoker to use to make remote calls.</param>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.Area.AreaClient.#ctor">
+            <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.Area.AreaClient.#ctor(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Protected constructor to allow creation of configured clients.</summary>
+            <param name="configuration">The client configuration.</param>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.Area.AreaClient.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.BaseAreaReflection">
+            <summary>Holder for reflection information generated from Grpc/Protos/baseArea.proto</summary>
+        </member>
+        <member name="P:CountwareTraffic.Services.Companies.Grpc.BaseAreaReflection.Descriptor">
+            <summary>File descriptor for Grpc/Protos/baseArea.proto</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.PagingRequest.LimitFieldNumber">
+            <summary>Field number for the "Limit" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.PagingRequest.PageFieldNumber">
+            <summary>Field number for the "Page" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.Audit.AuditCreateDateFieldNumber">
+            <summary>Field number for the "AuditCreateDate" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.Audit.AuditModifiedDateFieldNumber">
+            <summary>Field number for the "AuditModifiedDate" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.Audit.AuditCreateByFieldNumber">
+            <summary>Field number for the "AuditCreateBy" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.Audit.AuditModifiedByFieldNumber">
+            <summary>Field number for the "AuditModifiedBy" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateSuccessResponse.UpdatedFieldNumber">
+            <summary>Field number for the "Updated" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.DeleteSuccessResponse.DeletedFieldNumber">
+            <summary>Field number for the "Deleted" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateSuccessResponse.CreatedFieldNumber">
+            <summary>Field number for the "Created" field.</summary>
+        </member>
+        <member name="P:CountwareTraffic.Services.Companies.Grpc.BaseArea.Descriptor">
+            <summary>Service descriptor</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.BaseArea.BaseAreaClient">
+            <summary>Client for BaseArea</summary>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.BaseArea.BaseAreaClient.#ctor(Grpc.Core.ChannelBase)">
+            <summary>Creates a new client for BaseArea</summary>
+            <param name="channel">The channel to use to make remote calls.</param>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.BaseArea.BaseAreaClient.#ctor(Grpc.Core.CallInvoker)">
+            <summary>Creates a new client for BaseArea that uses a custom <c>CallInvoker</c>.</summary>
+            <param name="callInvoker">The callInvoker to use to make remote calls.</param>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.BaseArea.BaseAreaClient.#ctor">
+            <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.BaseArea.BaseAreaClient.#ctor(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Protected constructor to allow creation of configured clients.</summary>
+            <param name="configuration">The client configuration.</param>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.BaseArea.BaseAreaClient.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.CityReflection">
+            <summary>Holder for reflection information generated from Grpc/Protos/city.proto</summary>
+        </member>
+        <member name="P:CountwareTraffic.Services.Companies.Grpc.CityReflection.Descriptor">
+            <summary>File descriptor for Grpc/Protos/city.proto</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.GetCityRequest">
+             <summary>
+            REQUESTS
+             </summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.GetCityRequest.CityIdFieldNumber">
+            <summary>Field number for the "CityId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.GetCitiesRequest.CountryIdFieldNumber">
+            <summary>Field number for the "CountryId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.GetCitiesRequest.PagingRequestFieldNumber">
+            <summary>Field number for the "PagingRequest" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateCityRequest.CityIdFieldNumber">
+            <summary>Field number for the "CityId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateCityRequest.NameFieldNumber">
+            <summary>Field number for the "Name" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.DeleteCityRequest.CityIdFieldNumber">
+            <summary>Field number for the "CityId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateCityRequest.CountryIdFieldNumber">
+            <summary>Field number for the "CountryId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateCityRequest.NameFieldNumber">
+            <summary>Field number for the "Name" field.</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.CityPagingResponse">
+             <summary>
+            RESPONSES
+             </summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CityPagingResponse.TotalCountFieldNumber">
+            <summary>Field number for the "TotalCount" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CityPagingResponse.PageFieldNumber">
+            <summary>Field number for the "Page" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CityPagingResponse.LimitFieldNumber">
+            <summary>Field number for the "Limit" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CityPagingResponse.HasNextPageFieldNumber">
+            <summary>Field number for the "HasNextPage" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CityPagingResponse.NextFieldNumber">
+            <summary>Field number for the "Next" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CityPagingResponse.PrevFieldNumber">
+            <summary>Field number for the "Prev" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CityPagingResponse.CityDetailsFieldNumber">
+            <summary>Field number for the "CityDetails" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.GetCityDetailResponse.CityDetailFieldNumber">
+            <summary>Field number for the "CityDetail" field.</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.CityDetail">
+             <summary>
+            MODELS
+             </summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CityDetail.IdFieldNumber">
+            <summary>Field number for the "Id" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CityDetail.AuditFieldNumber">
+            <summary>Field number for the "Audit" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CityDetail.CountryIdFieldNumber">
+            <summary>Field number for the "CountryId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CityDetail.NameFieldNumber">
+            <summary>Field number for the "Name" field.</summary>
+        </member>
+        <member name="P:CountwareTraffic.Services.Companies.Grpc.City.Descriptor">
+            <summary>Service descriptor</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.City.CityClient">
+            <summary>Client for City</summary>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.City.CityClient.#ctor(Grpc.Core.ChannelBase)">
+            <summary>Creates a new client for City</summary>
+            <param name="channel">The channel to use to make remote calls.</param>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.City.CityClient.#ctor(Grpc.Core.CallInvoker)">
+            <summary>Creates a new client for City that uses a custom <c>CallInvoker</c>.</summary>
+            <param name="callInvoker">The callInvoker to use to make remote calls.</param>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.City.CityClient.#ctor">
+            <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.City.CityClient.#ctor(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Protected constructor to allow creation of configured clients.</summary>
+            <param name="configuration">The client configuration.</param>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.City.CityClient.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.CompanyReflection">
+            <summary>Holder for reflection information generated from Grpc/Protos/company.proto</summary>
+        </member>
+        <member name="P:CountwareTraffic.Services.Companies.Grpc.CompanyReflection.Descriptor">
+            <summary>File descriptor for Grpc/Protos/company.proto</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.GetCompanyRequest">
+             <summary>
+            REQUESTS --BEGIN
+             </summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.GetCompanyRequest.CompanyIdFieldNumber">
+            <summary>Field number for the "CompanyId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.GetCompaniesRequest.PagingRequestFieldNumber">
+            <summary>Field number for the "PagingRequest" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateCompanyRequest.NameFieldNumber">
+            <summary>Field number for the "Name" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateCompanyRequest.DescriptionFieldNumber">
+            <summary>Field number for the "Description" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateCompanyRequest.GsmNumberFieldNumber">
+            <summary>Field number for the "GsmNumber" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateCompanyRequest.PhoneNumberFieldNumber">
+            <summary>Field number for the "PhoneNumber" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateCompanyRequest.EmailAddressFieldNumber">
+            <summary>Field number for the "EmailAddress" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateCompanyRequest.FaxNumberFieldNumber">
+            <summary>Field number for the "FaxNumber" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateCompanyRequest.StreetFieldNumber">
+            <summary>Field number for the "Street" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateCompanyRequest.CityFieldNumber">
+            <summary>Field number for the "City" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateCompanyRequest.StateFieldNumber">
+            <summary>Field number for the "State" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateCompanyRequest.CountryFieldNumber">
+            <summary>Field number for the "Country" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateCompanyRequest.ZipCodeFieldNumber">
+            <summary>Field number for the "ZipCode" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateCompanyRequest.LatitudeFieldNumber">
+            <summary>Field number for the "Latitude" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateCompanyRequest.LongitudeFieldNumber">
+            <summary>Field number for the "Longitude" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateCompanyRequest.NameFieldNumber">
+            <summary>Field number for the "Name" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateCompanyRequest.DescriptionFieldNumber">
+            <summary>Field number for the "Description" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateCompanyRequest.GsmNumberFieldNumber">
+            <summary>Field number for the "GsmNumber" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateCompanyRequest.PhoneNumberFieldNumber">
+            <summary>Field number for the "PhoneNumber" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateCompanyRequest.EmailAddressFieldNumber">
+            <summary>Field number for the "EmailAddress" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateCompanyRequest.FaxNumberFieldNumber">
+            <summary>Field number for the "FaxNumber" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateCompanyRequest.StreetFieldNumber">
+            <summary>Field number for the "Street" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateCompanyRequest.CityFieldNumber">
+            <summary>Field number for the "City" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateCompanyRequest.StateFieldNumber">
+            <summary>Field number for the "State" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateCompanyRequest.CountryFieldNumber">
+            <summary>Field number for the "Country" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateCompanyRequest.ZipCodeFieldNumber">
+            <summary>Field number for the "ZipCode" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateCompanyRequest.LatitudeFieldNumber">
+            <summary>Field number for the "Latitude" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateCompanyRequest.LongitudeFieldNumber">
+            <summary>Field number for the "Longitude" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateCompanyRequest.CompanyIdFieldNumber">
+            <summary>Field number for the "CompanyId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.DeleteCompanyRequest.CompanyIdFieldNumber">
+            <summary>Field number for the "CompanyId" field.</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.CompanyPagingResponse">
+             <summary>
+            RESPONSES --BEGIN
+             </summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CompanyPagingResponse.TotalCountFieldNumber">
+            <summary>Field number for the "TotalCount" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CompanyPagingResponse.PageFieldNumber">
+            <summary>Field number for the "Page" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CompanyPagingResponse.LimitFieldNumber">
+            <summary>Field number for the "Limit" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CompanyPagingResponse.HasNextPageFieldNumber">
+            <summary>Field number for the "HasNextPage" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CompanyPagingResponse.NextFieldNumber">
+            <summary>Field number for the "Next" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CompanyPagingResponse.PrevFieldNumber">
+            <summary>Field number for the "Prev" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CompanyPagingResponse.CompanyDetailsFieldNumber">
+            <summary>Field number for the "CompanyDetails" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.GetCompanyDetailResponse.CompanyDetailFieldNumber">
+            <summary>Field number for the "CompanyDetail" field.</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.CompanyDetail">
+             <summary>
+            NODELS --BEGIN
+             </summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CompanyDetail.IdFieldNumber">
+            <summary>Field number for the "Id" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CompanyDetail.AuditFieldNumber">
+            <summary>Field number for the "Audit" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CompanyDetail.NameFieldNumber">
+            <summary>Field number for the "Name" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CompanyDetail.DescriptionFieldNumber">
+            <summary>Field number for the "Description" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CompanyDetail.GsmNumberFieldNumber">
+            <summary>Field number for the "GsmNumber" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CompanyDetail.PhoneNumberFieldNumber">
+            <summary>Field number for the "PhoneNumber" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CompanyDetail.EmailAddressFieldNumber">
+            <summary>Field number for the "EmailAddress" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CompanyDetail.FaxNumberFieldNumber">
+            <summary>Field number for the "FaxNumber" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CompanyDetail.StreetFieldNumber">
+            <summary>Field number for the "Street" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CompanyDetail.CityFieldNumber">
+            <summary>Field number for the "City" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CompanyDetail.StateFieldNumber">
+            <summary>Field number for the "State" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CompanyDetail.CountryFieldNumber">
+            <summary>Field number for the "Country" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CompanyDetail.ZipCodeFieldNumber">
+            <summary>Field number for the "ZipCode" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CompanyDetail.LatitudeFieldNumber">
+            <summary>Field number for the "Latitude" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CompanyDetail.LongitudeFieldNumber">
+            <summary>Field number for the "Longitude" field.</summary>
+        </member>
+        <member name="P:CountwareTraffic.Services.Companies.Grpc.Company.Descriptor">
+            <summary>Service descriptor</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.Company.CompanyClient">
+            <summary>Client for Company</summary>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.Company.CompanyClient.#ctor(Grpc.Core.ChannelBase)">
+            <summary>Creates a new client for Company</summary>
+            <param name="channel">The channel to use to make remote calls.</param>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.Company.CompanyClient.#ctor(Grpc.Core.CallInvoker)">
+            <summary>Creates a new client for Company that uses a custom <c>CallInvoker</c>.</summary>
+            <param name="callInvoker">The callInvoker to use to make remote calls.</param>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.Company.CompanyClient.#ctor">
+            <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.Company.CompanyClient.#ctor(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Protected constructor to allow creation of configured clients.</summary>
+            <param name="configuration">The client configuration.</param>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.Company.CompanyClient.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.CountryReflection">
+            <summary>Holder for reflection information generated from Grpc/Protos/country.proto</summary>
+        </member>
+        <member name="P:CountwareTraffic.Services.Companies.Grpc.CountryReflection.Descriptor">
+            <summary>File descriptor for Grpc/Protos/country.proto</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.GetCountryRequest">
+             <summary>
+            REQUESTS
+             </summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.GetCountryRequest.CountryIdFieldNumber">
+            <summary>Field number for the "CountryId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.GetCountriesRequest.CompanyIdFieldNumber">
+            <summary>Field number for the "CompanyId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.GetCountriesRequest.PagingRequestFieldNumber">
+            <summary>Field number for the "PagingRequest" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateCountryRequest.CountryIdFieldNumber">
+            <summary>Field number for the "CountryId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateCountryRequest.NameFieldNumber">
+            <summary>Field number for the "Name" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateCountryRequest.IsoNumericFieldNumber">
+            <summary>Field number for the "IsoNumeric" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateCountryRequest.IsoFieldNumber">
+            <summary>Field number for the "Iso" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateCountryRequest.Iso3FieldNumber">
+            <summary>Field number for the "Iso3" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateCountryRequest.CapitalFieldNumber">
+            <summary>Field number for the "Capital" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateCountryRequest.ContinentCodeFieldNumber">
+            <summary>Field number for the "ContinentCode" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateCountryRequest.CurrencyCodeFieldNumber">
+            <summary>Field number for the "CurrencyCode" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.DeleteCountryRequest.CountryIdFieldNumber">
+            <summary>Field number for the "CountryId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateCountryRequest.CompanyIdFieldNumber">
+            <summary>Field number for the "CompanyId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateCountryRequest.NameFieldNumber">
+            <summary>Field number for the "Name" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateCountryRequest.IsoNumericFieldNumber">
+            <summary>Field number for the "IsoNumeric" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateCountryRequest.IsoFieldNumber">
+            <summary>Field number for the "Iso" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateCountryRequest.Iso3FieldNumber">
+            <summary>Field number for the "Iso3" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateCountryRequest.CapitalFieldNumber">
+            <summary>Field number for the "Capital" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateCountryRequest.ContinentCodeFieldNumber">
+            <summary>Field number for the "ContinentCode" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateCountryRequest.CurrencyCodeFieldNumber">
+            <summary>Field number for the "CurrencyCode" field.</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.CountryPagingResponse">
+             <summary>
+            RESPONSES
+             </summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CountryPagingResponse.TotalCountFieldNumber">
+            <summary>Field number for the "TotalCount" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CountryPagingResponse.PageFieldNumber">
+            <summary>Field number for the "Page" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CountryPagingResponse.LimitFieldNumber">
+            <summary>Field number for the "Limit" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CountryPagingResponse.HasNextPageFieldNumber">
+            <summary>Field number for the "HasNextPage" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CountryPagingResponse.NextFieldNumber">
+            <summary>Field number for the "Next" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CountryPagingResponse.PrevFieldNumber">
+            <summary>Field number for the "Prev" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CountryPagingResponse.CountryDetailsFieldNumber">
+            <summary>Field number for the "CountryDetails" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.GetCountryDetailResponse.CountryDetailFieldNumber">
+            <summary>Field number for the "CountryDetail" field.</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.CountryDetail">
+             <summary>
+            MODELS
+             </summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CountryDetail.IdFieldNumber">
+            <summary>Field number for the "Id" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CountryDetail.AuditFieldNumber">
+            <summary>Field number for the "Audit" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CountryDetail.CompanyIdFieldNumber">
+            <summary>Field number for the "CompanyId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CountryDetail.NameFieldNumber">
+            <summary>Field number for the "Name" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CountryDetail.IsoNumericFieldNumber">
+            <summary>Field number for the "IsoNumeric" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CountryDetail.IsoFieldNumber">
+            <summary>Field number for the "Iso" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CountryDetail.Iso3FieldNumber">
+            <summary>Field number for the "Iso3" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CountryDetail.CapitalFieldNumber">
+            <summary>Field number for the "Capital" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CountryDetail.ContinentCodeFieldNumber">
+            <summary>Field number for the "ContinentCode" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CountryDetail.CurrencyCodeFieldNumber">
+            <summary>Field number for the "CurrencyCode" field.</summary>
+        </member>
+        <member name="P:CountwareTraffic.Services.Companies.Grpc.Country.Descriptor">
+            <summary>Service descriptor</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.Country.CountryClient">
+            <summary>Client for Country</summary>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.Country.CountryClient.#ctor(Grpc.Core.ChannelBase)">
+            <summary>Creates a new client for Country</summary>
+            <param name="channel">The channel to use to make remote calls.</param>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.Country.CountryClient.#ctor(Grpc.Core.CallInvoker)">
+            <summary>Creates a new client for Country that uses a custom <c>CallInvoker</c>.</summary>
+            <param name="callInvoker">The callInvoker to use to make remote calls.</param>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.Country.CountryClient.#ctor">
+            <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.Country.CountryClient.#ctor(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Protected constructor to allow creation of configured clients.</summary>
+            <param name="configuration">The client configuration.</param>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.Country.CountryClient.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.DistrictReflection">
+            <summary>Holder for reflection information generated from Grpc/Protos/district.proto</summary>
+        </member>
+        <member name="P:CountwareTraffic.Services.Companies.Grpc.DistrictReflection.Descriptor">
+            <summary>File descriptor for Grpc/Protos/district.proto</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.GetDistrictRequest">
+             <summary>
+            REQUESTS
+             </summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.GetDistrictRequest.DistrictIdFieldNumber">
+            <summary>Field number for the "DistrictId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.GetDistrictsRequest.CityIdFieldNumber">
+            <summary>Field number for the "CityId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.GetDistrictsRequest.PagingRequestFieldNumber">
+            <summary>Field number for the "PagingRequest" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateDistrictRequest.DistrictIdFieldNumber">
+            <summary>Field number for the "DistrictId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateDistrictRequest.NameFieldNumber">
+            <summary>Field number for the "Name" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.DeleteDistrictRequest.DistrictIdFieldNumber">
+            <summary>Field number for the "DistrictId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateDistrictRequest.CityIdFieldNumber">
+            <summary>Field number for the "CityId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateDistrictRequest.NameFieldNumber">
+            <summary>Field number for the "Name" field.</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.DistrictPagingResponse">
+             <summary>
+            RESPONSES
+             </summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.DistrictPagingResponse.TotalCountFieldNumber">
+            <summary>Field number for the "TotalCount" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.DistrictPagingResponse.PageFieldNumber">
+            <summary>Field number for the "Page" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.DistrictPagingResponse.LimitFieldNumber">
+            <summary>Field number for the "Limit" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.DistrictPagingResponse.HasNextPageFieldNumber">
+            <summary>Field number for the "HasNextPage" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.DistrictPagingResponse.NextFieldNumber">
+            <summary>Field number for the "Next" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.DistrictPagingResponse.PrevFieldNumber">
+            <summary>Field number for the "Prev" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.DistrictPagingResponse.DistrictDetailsFieldNumber">
+            <summary>Field number for the "DistrictDetails" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.GetDistrictDetailResponse.DistrictDetailFieldNumber">
+            <summary>Field number for the "DistrictDetail" field.</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.DistrictDetail">
+             <summary>
+            MODELS
+             </summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.DistrictDetail.IdFieldNumber">
+            <summary>Field number for the "Id" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.DistrictDetail.AuditFieldNumber">
+            <summary>Field number for the "Audit" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.DistrictDetail.CityIdFieldNumber">
+            <summary>Field number for the "CityId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.DistrictDetail.NameFieldNumber">
+            <summary>Field number for the "Name" field.</summary>
+        </member>
+        <member name="P:CountwareTraffic.Services.Companies.Grpc.District.Descriptor">
+            <summary>Service descriptor</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.District.DistrictClient">
+            <summary>Client for District</summary>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.District.DistrictClient.#ctor(Grpc.Core.ChannelBase)">
+            <summary>Creates a new client for District</summary>
+            <param name="channel">The channel to use to make remote calls.</param>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.District.DistrictClient.#ctor(Grpc.Core.CallInvoker)">
+            <summary>Creates a new client for District that uses a custom <c>CallInvoker</c>.</summary>
+            <param name="callInvoker">The callInvoker to use to make remote calls.</param>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.District.DistrictClient.#ctor">
+            <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.District.DistrictClient.#ctor(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Protected constructor to allow creation of configured clients.</summary>
+            <param name="configuration">The client configuration.</param>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.District.DistrictClient.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.SubareaReflection">
+            <summary>Holder for reflection information generated from Grpc/Protos/subarea.proto</summary>
+        </member>
+        <member name="P:CountwareTraffic.Services.Companies.Grpc.SubareaReflection.Descriptor">
+            <summary>File descriptor for Grpc/Protos/subarea.proto</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.GetSubAreaRequest">
+             <summary>
+            REQUESTS
+             </summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.GetSubAreaRequest.SubAreaIdFieldNumber">
+            <summary>Field number for the "SubAreaId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.GetSubAreasRequest.AreaIdFieldNumber">
+            <summary>Field number for the "AreaId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.GetSubAreasRequest.PagingRequestFieldNumber">
+            <summary>Field number for the "PagingRequest" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateSubAreaRequest.SubAreaIdFieldNumber">
+            <summary>Field number for the "SubAreaId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateSubAreaRequest.NameFieldNumber">
+            <summary>Field number for the "Name" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.UpdateSubAreaRequest.DescriptionFieldNumber">
+            <summary>Field number for the "Description" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.DeleteSubAreaRequest.SubAreaIdFieldNumber">
+            <summary>Field number for the "SubAreaId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateSubAreaRequest.AreaIdFieldNumber">
+            <summary>Field number for the "AreaId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateSubAreaRequest.NameFieldNumber">
+            <summary>Field number for the "Name" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.CreateSubAreaRequest.DescriptionFieldNumber">
+            <summary>Field number for the "Description" field.</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.SubAreaPagingResponse">
+             <summary>
+            RESPONSES
+             </summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.SubAreaPagingResponse.TotalCountFieldNumber">
+            <summary>Field number for the "TotalCount" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.SubAreaPagingResponse.PageFieldNumber">
+            <summary>Field number for the "Page" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.SubAreaPagingResponse.LimitFieldNumber">
+            <summary>Field number for the "Limit" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.SubAreaPagingResponse.HasNextPageFieldNumber">
+            <summary>Field number for the "HasNextPage" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.SubAreaPagingResponse.NextFieldNumber">
+            <summary>Field number for the "Next" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.SubAreaPagingResponse.PrevFieldNumber">
+            <summary>Field number for the "Prev" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.SubAreaPagingResponse.SubAreaDetailsFieldNumber">
+            <summary>Field number for the "SubAreaDetails" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.GetSubAreaDetailResponse.SubAreaDetailFieldNumber">
+            <summary>Field number for the "SubAreaDetail" field.</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.SubAreaDetail">
+             <summary>
+            MODELS
+             </summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.SubAreaDetail.IdFieldNumber">
+            <summary>Field number for the "Id" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.SubAreaDetail.AuditFieldNumber">
+            <summary>Field number for the "Audit" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.SubAreaDetail.AreaIdFieldNumber">
+            <summary>Field number for the "AreaId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.SubAreaDetail.NameFieldNumber">
+            <summary>Field number for the "Name" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Companies.Grpc.SubAreaDetail.DescriptionFieldNumber">
+            <summary>Field number for the "Description" field.</summary>
+        </member>
+        <member name="P:CountwareTraffic.Services.Companies.Grpc.Subarea.Descriptor">
+            <summary>Service descriptor</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Companies.Grpc.Subarea.SubareaClient">
+            <summary>Client for Subarea</summary>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.Subarea.SubareaClient.#ctor(Grpc.Core.ChannelBase)">
+            <summary>Creates a new client for Subarea</summary>
+            <param name="channel">The channel to use to make remote calls.</param>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.Subarea.SubareaClient.#ctor(Grpc.Core.CallInvoker)">
+            <summary>Creates a new client for Subarea that uses a custom <c>CallInvoker</c>.</summary>
+            <param name="callInvoker">The callInvoker to use to make remote calls.</param>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.Subarea.SubareaClient.#ctor">
+            <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.Subarea.SubareaClient.#ctor(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Protected constructor to allow creation of configured clients.</summary>
+            <param name="configuration">The client configuration.</param>
+        </member>
+        <member name="M:CountwareTraffic.Services.Companies.Grpc.Subarea.SubareaClient.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Devices.Grpc.BaseDeviceReflection">
+            <summary>Holder for reflection information generated from Grpc/Protos/baseDevice.proto</summary>
+        </member>
+        <member name="P:CountwareTraffic.Services.Devices.Grpc.BaseDeviceReflection.Descriptor">
+            <summary>File descriptor for Grpc/Protos/baseDevice.proto</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.PagingRequest.LimitFieldNumber">
+            <summary>Field number for the "Limit" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.PagingRequest.PageFieldNumber">
+            <summary>Field number for the "Page" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.Audit.AuditCreateDateFieldNumber">
+            <summary>Field number for the "AuditCreateDate" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.Audit.AuditModifiedDateFieldNumber">
+            <summary>Field number for the "AuditModifiedDate" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.Audit.AuditCreateByFieldNumber">
+            <summary>Field number for the "AuditCreateBy" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.Audit.AuditModifiedByFieldNumber">
+            <summary>Field number for the "AuditModifiedBy" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.UpdateSuccessResponse.UpdatedFieldNumber">
+            <summary>Field number for the "Updated" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.DeleteSuccessResponse.DeletedFieldNumber">
+            <summary>Field number for the "Deleted" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.CreateSuccessResponse.CreatedFieldNumber">
+            <summary>Field number for the "Created" field.</summary>
+        </member>
+        <member name="P:CountwareTraffic.Services.Devices.Grpc.BaseDevice.Descriptor">
+            <summary>Service descriptor</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Devices.Grpc.BaseDevice.BaseDeviceClient">
+            <summary>Client for BaseDevice</summary>
+        </member>
+        <member name="M:CountwareTraffic.Services.Devices.Grpc.BaseDevice.BaseDeviceClient.#ctor(Grpc.Core.ChannelBase)">
+            <summary>Creates a new client for BaseDevice</summary>
+            <param name="channel">The channel to use to make remote calls.</param>
+        </member>
+        <member name="M:CountwareTraffic.Services.Devices.Grpc.BaseDevice.BaseDeviceClient.#ctor(Grpc.Core.CallInvoker)">
+            <summary>Creates a new client for BaseDevice that uses a custom <c>CallInvoker</c>.</summary>
+            <param name="callInvoker">The callInvoker to use to make remote calls.</param>
+        </member>
+        <member name="M:CountwareTraffic.Services.Devices.Grpc.BaseDevice.BaseDeviceClient.#ctor">
+            <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+        </member>
+        <member name="M:CountwareTraffic.Services.Devices.Grpc.BaseDevice.BaseDeviceClient.#ctor(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Protected constructor to allow creation of configured clients.</summary>
+            <param name="configuration">The client configuration.</param>
+        </member>
+        <member name="M:CountwareTraffic.Services.Devices.Grpc.BaseDevice.BaseDeviceClient.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Devices.Grpc.DeviceReflection">
+            <summary>Holder for reflection information generated from Grpc/Protos/device.proto</summary>
+        </member>
+        <member name="P:CountwareTraffic.Services.Devices.Grpc.DeviceReflection.Descriptor">
+            <summary>File descriptor for Grpc/Protos/device.proto</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Devices.Grpc.GetDeviceRequest">
+             <summary>
+            REQUESTS
+             </summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.GetDeviceRequest.DeviceIdFieldNumber">
+            <summary>Field number for the "DeviceId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.GetDevicesRequest.SubAreaIdFieldNumber">
+            <summary>Field number for the "SubAreaId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.GetDevicesRequest.PagingRequestFieldNumber">
+            <summary>Field number for the "PagingRequest" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.UpdateDeviceRequest.DeviceIdFieldNumber">
+            <summary>Field number for the "DeviceId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.UpdateDeviceRequest.NameFieldNumber">
+            <summary>Field number for the "Name" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.UpdateDeviceRequest.DescriptionFieldNumber">
+            <summary>Field number for the "Description" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.UpdateDeviceRequest.ModelFieldNumber">
+            <summary>Field number for the "Model" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.UpdateDeviceRequest.DeviceStatusIdFieldNumber">
+            <summary>Field number for the "DeviceStatusId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.UpdateDeviceRequest.DeviceTypeIdFieldNumber">
+            <summary>Field number for the "DeviceTypeId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.UpdateDeviceRequest.IpAddressFieldNumber">
+            <summary>Field number for the "IpAddress" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.UpdateDeviceRequest.PortFieldNumber">
+            <summary>Field number for the "Port" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.UpdateDeviceRequest.IdentityFieldNumber">
+            <summary>Field number for the "Identity" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.UpdateDeviceRequest.PasswordFieldNumber">
+            <summary>Field number for the "Password" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.UpdateDeviceRequest.UniqueIdFieldNumber">
+            <summary>Field number for the "UniqueId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.UpdateDeviceRequest.MacAddressFieldNumber">
+            <summary>Field number for the "MacAddress" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.DeleteDeviceRequest.DeviceIdFieldNumber">
+            <summary>Field number for the "DeviceId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.CreateDeviceRequest.SubAreaIdFieldNumber">
+            <summary>Field number for the "SubAreaId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.CreateDeviceRequest.NameFieldNumber">
+            <summary>Field number for the "Name" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.CreateDeviceRequest.DescriptionFieldNumber">
+            <summary>Field number for the "Description" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.CreateDeviceRequest.ModelFieldNumber">
+            <summary>Field number for the "Model" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.CreateDeviceRequest.DeviceStatusIdFieldNumber">
+            <summary>Field number for the "DeviceStatusId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.CreateDeviceRequest.DeviceTypeIdFieldNumber">
+            <summary>Field number for the "DeviceTypeId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.CreateDeviceRequest.IpAddressFieldNumber">
+            <summary>Field number for the "IpAddress" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.CreateDeviceRequest.PortFieldNumber">
+            <summary>Field number for the "Port" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.CreateDeviceRequest.IdentityFieldNumber">
+            <summary>Field number for the "Identity" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.CreateDeviceRequest.PasswordFieldNumber">
+            <summary>Field number for the "Password" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.CreateDeviceRequest.UniqueIdFieldNumber">
+            <summary>Field number for the "UniqueId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.CreateDeviceRequest.MacAddressFieldNumber">
+            <summary>Field number for the "MacAddress" field.</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Devices.Grpc.DevicePagingResponse">
+             <summary>
+            RESPONSES
+             </summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.DevicePagingResponse.TotalCountFieldNumber">
+            <summary>Field number for the "TotalCount" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.DevicePagingResponse.PageFieldNumber">
+            <summary>Field number for the "Page" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.DevicePagingResponse.LimitFieldNumber">
+            <summary>Field number for the "Limit" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.DevicePagingResponse.HasNextPageFieldNumber">
+            <summary>Field number for the "HasNextPage" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.DevicePagingResponse.NextFieldNumber">
+            <summary>Field number for the "Next" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.DevicePagingResponse.PrevFieldNumber">
+            <summary>Field number for the "Prev" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.DevicePagingResponse.DeviceDetailsFieldNumber">
+            <summary>Field number for the "DeviceDetails" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.GetDeviceDetailResponse.DeviceDetailFieldNumber">
+            <summary>Field number for the "DeviceDetail" field.</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Devices.Grpc.DeviceDetail">
+             <summary>
+            MODELS
+             </summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.DeviceDetail.SubAreaIdFieldNumber">
+            <summary>Field number for the "SubAreaId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.DeviceDetail.NameFieldNumber">
+            <summary>Field number for the "Name" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.DeviceDetail.DescriptionFieldNumber">
+            <summary>Field number for the "Description" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.DeviceDetail.ModelFieldNumber">
+            <summary>Field number for the "Model" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.DeviceDetail.DeviceStatusIdFieldNumber">
+            <summary>Field number for the "DeviceStatusId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.DeviceDetail.DeviceTypeIdFieldNumber">
+            <summary>Field number for the "DeviceTypeId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.DeviceDetail.IpAddressFieldNumber">
+            <summary>Field number for the "IpAddress" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.DeviceDetail.PortFieldNumber">
+            <summary>Field number for the "Port" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.DeviceDetail.IdentityFieldNumber">
+            <summary>Field number for the "Identity" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.DeviceDetail.PasswordFieldNumber">
+            <summary>Field number for the "Password" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.DeviceDetail.UniqueIdFieldNumber">
+            <summary>Field number for the "UniqueId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.DeviceDetail.MacAddressFieldNumber">
+            <summary>Field number for the "MacAddress" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.DeviceDetail.IdFieldNumber">
+            <summary>Field number for the "Id" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.DeviceDetail.AuditFieldNumber">
+            <summary>Field number for the "Audit" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.DeviceDetail.DeviceStatusNameFieldNumber">
+            <summary>Field number for the "DeviceStatusName" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Devices.Grpc.DeviceDetail.DeviceTypeNameFieldNumber">
+            <summary>Field number for the "DeviceTypeName" field.</summary>
+        </member>
+        <member name="P:CountwareTraffic.Services.Devices.Grpc.Device.Descriptor">
+            <summary>Service descriptor</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Devices.Grpc.Device.DeviceClient">
+            <summary>Client for Device</summary>
+        </member>
+        <member name="M:CountwareTraffic.Services.Devices.Grpc.Device.DeviceClient.#ctor(Grpc.Core.ChannelBase)">
+            <summary>Creates a new client for Device</summary>
+            <param name="channel">The channel to use to make remote calls.</param>
+        </member>
+        <member name="M:CountwareTraffic.Services.Devices.Grpc.Device.DeviceClient.#ctor(Grpc.Core.CallInvoker)">
+            <summary>Creates a new client for Device that uses a custom <c>CallInvoker</c>.</summary>
+            <param name="callInvoker">The callInvoker to use to make remote calls.</param>
+        </member>
+        <member name="M:CountwareTraffic.Services.Devices.Grpc.Device.DeviceClient.#ctor">
+            <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+        </member>
+        <member name="M:CountwareTraffic.Services.Devices.Grpc.Device.DeviceClient.#ctor(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Protected constructor to allow creation of configured clients.</summary>
+            <param name="configuration">The client configuration.</param>
+        </member>
+        <member name="M:CountwareTraffic.Services.Devices.Grpc.Device.DeviceClient.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Users.Grpc.UserReflection">
+            <summary>Holder for reflection information generated from Grpc/Protos/user.proto</summary>
+        </member>
+        <member name="P:CountwareTraffic.Services.Users.Grpc.UserReflection.Descriptor">
+            <summary>File descriptor for Grpc/Protos/user.proto</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Users.Grpc.GetTokenRequest">
+             <summary>
+            REQUESTS
+             </summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Users.Grpc.GetTokenRequest.GrantTypeFieldNumber">
+            <summary>Field number for the "GrantType" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Users.Grpc.GetTokenRequest.ClientIdFieldNumber">
+            <summary>Field number for the "ClientId" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Users.Grpc.GetTokenRequest.ClientSecretFieldNumber">
+            <summary>Field number for the "ClientSecret" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Users.Grpc.GetTokenRequest.UsernameFieldNumber">
+            <summary>Field number for the "Username" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Users.Grpc.GetTokenRequest.PasswordFieldNumber">
+            <summary>Field number for the "Password" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Users.Grpc.GetTokenRequest.RefreshTokenFieldNumber">
+            <summary>Field number for the "RefreshToken" field.</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Users.Grpc.GetTokenResponse">
+             <summary>
+            RESPONSES
+             </summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Users.Grpc.GetTokenResponse.AccessTokenFieldNumber">
+            <summary>Field number for the "AccessToken" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Users.Grpc.GetTokenResponse.TokenTypeFieldNumber">
+            <summary>Field number for the "TokenType" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Users.Grpc.GetTokenResponse.ExpiresInFieldNumber">
+            <summary>Field number for the "ExpiresIn" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Users.Grpc.GetTokenResponse.ScopeFieldNumber">
+            <summary>Field number for the "Scope" field.</summary>
+        </member>
+        <member name="F:CountwareTraffic.Services.Users.Grpc.GetTokenResponse.RefreshTokenFieldNumber">
+            <summary>Field number for the "RefreshToken" field.</summary>
+        </member>
+        <member name="P:CountwareTraffic.Services.Users.Grpc.User.Descriptor">
+            <summary>Service descriptor</summary>
+        </member>
+        <member name="T:CountwareTraffic.Services.Users.Grpc.User.UserClient">
+            <summary>Client for User</summary>
+        </member>
+        <member name="M:CountwareTraffic.Services.Users.Grpc.User.UserClient.#ctor(Grpc.Core.ChannelBase)">
+            <summary>Creates a new client for User</summary>
+            <param name="channel">The channel to use to make remote calls.</param>
+        </member>
+        <member name="M:CountwareTraffic.Services.Users.Grpc.User.UserClient.#ctor(Grpc.Core.CallInvoker)">
+            <summary>Creates a new client for User that uses a custom <c>CallInvoker</c>.</summary>
+            <param name="callInvoker">The callInvoker to use to make remote calls.</param>
+        </member>
+        <member name="M:CountwareTraffic.Services.Users.Grpc.User.UserClient.#ctor">
+            <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+        </member>
+        <member name="M:CountwareTraffic.Services.Users.Grpc.User.UserClient.#ctor(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Protected constructor to allow creation of configured clients.</summary>
+            <param name="configuration">The client configuration.</param>
+        </member>
+        <member name="M:CountwareTraffic.Services.Users.Grpc.User.UserClient.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
+        </member>
+    </members>
+</doc>

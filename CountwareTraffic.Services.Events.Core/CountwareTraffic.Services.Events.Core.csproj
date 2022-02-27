@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sensormatic.Tool.Core\Sensormatic.Tool.Core.csproj" />
+    <ProjectReference Include="..\Sensormatic.Tool.Efcore\Sensormatic.Tool.Efcore.csproj" />
+    <ProjectReference Include="..\Sensormatic.Tool.Ioc\Sensormatic.Tool.Ioc.csproj" />
+  </ItemGroup>
+
+</Project>

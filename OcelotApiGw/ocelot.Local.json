@@ -1,0 +1,69 @@
+{
+  "Routes": [
+    //Companies API
+    {
+      "DownstreamPathTemplate": "/api/v1/SubAreas/{subAreaId}/detail",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5100
+        }
+      ],
+      "UpstreamPathTemplate": "/SubAreas/{subAreaId}/detail",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/SubAreas/{areaId}/details",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+            "Host": "localhost",
+            "Port": 5100
+        }
+      ],
+      "UpstreamPathTemplate": "/SubAreas/{areaId}/details",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/SubAreas/{areaId}/add",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+            "Host": "localhost",
+            "Port": 5100
+        }
+      ],
+      "UpstreamPathTemplate": "/SubAreas/{areaId}/add",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/SubAreas/{subAreaId}/change",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+            "Host": "localhost",
+            "Port": 5100
+        }
+      ],
+      "UpstreamPathTemplate": "/SubAreas/{subAreaId}/change",
+      "UpstreamHttpMethod": [ "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/SubAreas/{subAreaId}/cancel",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+            "Host": "localhost",
+            "Port": 5100
+        }
+      ],
+      "UpstreamPathTemplate": "/SubAreas/{subAreaId}/cancel",
+      "UpstreamHttpMethod": [ "DELETE" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:1010"
+  }
+
+}

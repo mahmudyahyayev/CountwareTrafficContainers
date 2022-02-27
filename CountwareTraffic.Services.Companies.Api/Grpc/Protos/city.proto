@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+option csharp_namespace = "CountwareTraffic.Services.Companies.Grpc";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+import "Grpc/Protos/baseArea.proto";
+
+package city;
+
+service City {
+    rpc GetCityById(GetCityRequest) returns (GetCityDetailResponse){}
+    rpc GetCities(GetCitiesRequest) returns (CityPagingResponse){}
+    rpc ChangeCity(UpdateCityRequest) returns (baseArea.UpdateSuccessResponse){}
+    rpc DeleteCity(DeleteCityRequest) returns (baseArea.DeleteSuccessResponse){}
+    rpc AddCity(CreateCityRequest) returns (baseArea.CreateSuccessResponse){}
+}
+
+/*REQUESTS*/
+message GetCityRequest {
+	string CityId = 1;
+}
+
+message GetCitiesRequest {
+	string CountryId = 1;
+    baseArea.PagingRequest PagingRequest = 2;
+}
+
+message UpdateCityRequest{
+    string CityId = 1;
+    string Name = 2;
+}
+
+message DeleteCityRequest{
+    string CityId = 1;
+}
+
+message CreateCityRequest{
+    string CountryId = 1;
+    string Name = 2;
+}
+
+/*RESPONSES*/
+message CityPagingResponse {
+    int32 TotalCount = 1;
+    int32 Page = 2;
+    int32 Limit = 3;
+    bool HasNextPage = 4;
+    google.protobuf.Int32Value Next = 5;
+    google.protobuf.Int32Value Prev = 6;
+    repeated CityDetail CityDetails  = 7;
+}
+
+message GetCityDetailResponse {
+    CityDetail CityDetail  = 1;
+}
+
+/*MODELS*/
+message CityDetail
+{
+    string Id = 1;
+    baseArea.Audit Audit = 2;
+    string CountryId = 3;
+    string Name = 4;
+}
+
+

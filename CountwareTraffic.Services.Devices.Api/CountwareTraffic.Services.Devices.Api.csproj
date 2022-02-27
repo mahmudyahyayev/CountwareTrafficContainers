@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+    <UserSecretsId>fa19ec5e-663e-463c-a0a7-372f227b5ad0</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="CountwareTraffic.Services.Devices.Api.xml" />
+    <None Remove="Grpc\Protos\baseDevice.proto" />
+    <None Remove="Grpc\Protos\device.proto" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="CountwareTraffic.Services.Devices.Api.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.19.1" />
+    <PackageReference Include="Grpc.AspNetCore" Version="2.41.0" />
+    <PackageReference Include="Grpc.AspNetCore.Web" Version="2.41.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.13" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
+    <PackageReference Include="Serilog.Sinks.Graylog" Version="2.2.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CountwareTraffic.Services.Devices.Infrastructure\CountwareTraffic.Services.Devices.Infrastructure.csproj" />
+    <ProjectReference Include="..\Observability\Observability.csproj" />
+    <ProjectReference Include="..\Sensormatic.Tool.Api\Sensormatic.Tool.Api.csproj" />
+    <ProjectReference Include="..\Sensormatic.Tool.Grpc\Sensormatic.Tool.Grpc.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="Grpc\Protos\device.proto" GrpcServices="Server" />
+    <Protobuf Include="Grpc\Protos\baseDevice.proto" GrpcServices="Server" />
+  </ItemGroup>
+
+</Project>

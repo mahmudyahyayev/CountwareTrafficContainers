@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option csharp_namespace = "CountwareTraffic.Services.Companies.Grpc";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+package baseArea;
+
+service BaseArea {}
+  
+
+message PagingRequest{
+    int32 Limit = 1;
+    int32 Page = 2;
+}
+
+message Audit{
+    google.protobuf.Timestamp AuditCreateDate = 1;
+    google.protobuf.Timestamp AuditModifiedDate = 2;
+    string AuditCreateBy = 3;
+    string AuditModifiedBy = 4;
+}
+
+message UpdateSuccessResponse{
+     google.protobuf.StringValue Updated = 1;
+}
+
+message DeleteSuccessResponse{
+     google.protobuf.StringValue Deleted = 1;
+}
+
+message CreateSuccessResponse{
+     google.protobuf.StringValue Created = 1;
+}

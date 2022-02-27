@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Commands\Internals\**" />
+    <EmbeddedResource Remove="Commands\Internals\**" />
+    <None Remove="Commands\Internals\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CountwareTraffic.Services.Devices.Core\CountwareTraffic.Services.Devices.Core.csproj" />
+    <ProjectReference Include="..\Sensormatic.Tool.QueueModel\Sensormatic.Tool.QueueModel.csproj" />
+    <ProjectReference Include="..\Sensormatic.Tool.Queue\Sensormatic.Tool.Queue.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Convey" Version="0.5.518" />
+    <PackageReference Include="Convey.CQRS.Commands" Version="0.5.518" />
+    <PackageReference Include="Convey.CQRS.Events" Version="0.5.518" />
+    <PackageReference Include="Convey.CQRS.Queries" Version="0.5.518" />
+  </ItemGroup>
+
+</Project>

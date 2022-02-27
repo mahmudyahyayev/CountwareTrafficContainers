@@ -1,0 +1,179 @@
+version: '3.4'
+
+services:
+
+#-------------------------------------------------------------------------sql mssql----------------------------------------------------------------------------------#
+  sqldata:
+    container_name: mssql
+    environment:
+      - SA_PASSWORD=Pass@word
+      - ACCEPT_EULA=Y
+    ports:
+      - "5433:1433"
+    volumes:
+      - countwaretraffic-sqldata:/var/opt/mssql
+
+
+#-------------------------------------------------------------------------nosql mongo---------------------------------------------------------------------------------#
+  nosqldata:
+    container_name: nosqldata_mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - countwaretraffic-nosqldata:/data/db
+
+#-------------------------------------------------------------------------redis cache---------------------------------------------------------------------------------#
+  redis:
+     container_name: redis
+     ports:
+      - "6379:6379"
+     #volumes:
+     #  - db_data
+
+
+#-------------------------------------------------------------------------gateway-------------------------------------------------------------------------------------#
+  ocelot.gateway:
+    container_name: ocelot.gateway
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+      - "1100:80"
+    depends_on:
+      - device.api-grpc
+      - company.api-grpc
+
+
+#-------------------------------------------------------------------------bff httpaggregator---------------------------------------------------------------------------#
+  mobile.bff:
+    container_name: mobile.bff
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "urlsConfig:grpcArea=http://company.api-grpc"
+      - "urlsConfig:grpcDevice=http://device.api-grpc"
+      - "urlsConfig:grpcUser=http://identityserver.client-grpc"
+      - ASPNETCORE_URLS=http://+:80
+    depends_on:
+      - company.api-grpc
+      - device.api-grpc
+      - identityserver.client-grpc
+    ports:
+      - "2100:80"
+    volumes:
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+
+#------------------------------------------------------------------------company microservice--------------------------------------------------------------------------#
+  company.api-grpc:
+    container_name: company.api-grpc
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+      - "5100:80"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+
+#------------------------------------------------------------------------device microservice---------------------------------------------------------------------------#
+  device.api-grpc:
+    container_name: device.api-grpc
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+       - "6100:80"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+
+#------------------------------------------------------------------------event microservice-----------------------------------------------------------------------------#
+  event.api-grpc:
+    container_name: event.api-grpc
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+      - "7100:80"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+
+#------------------------------------------------------------------------identity server comunication------------------------------------------------------------------#
+  identityserver.client-grpc:
+    container_name:  identityserver.client-grpc
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+       - "8100:80"
+    volumes:
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+
+#------------------------------------------------------------------------ sms-consumer----------------------------------------------------------------------------------#
+  sms-consumer:
+    container_name:  sms-consumer
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    volumes:
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+
+#------------------------------------------------------------------------ email-consumer----------------------------------------------------------------------------------#
+  email-consumer:
+    container_name:  email-consumer
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    volumes:
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+
+#------------------------------------------------------------------------signalr-consumer ----------------------------------------------------------------------------------#
+  signalr-consumer:
+    container_name:  signalr-consumer
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+       - "5959:80"
+    volumes:
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+
+#------------------------------------------------------------------------ event-listener-scheduler----------------------------------------------------------------------------------#
+  event-listener-scheduler:
+    container_name:  event-listener-scheduler
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+       - "4646:80"
+    volumes:
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+
+#------------------------------------------------------------------------ audit-log-consumer----------------------------------------------------------------------------------#
+  audit-log-consumer:
+    container_name:  audit-log-consumer
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    volumes:
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+
+#------------------------------------------------------------------------volumes----------------------------------------------------------------------------------------------#
+volumes:
+  countwaretraffic-sqldata:
+    external: false
+
+  countwaretraffic-nosqldata:
+    external: false
+
+
+
+
+

@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Convey.CQRS.Commands" Version="0.5.518" />
+    <PackageReference Include="Stubble.Core" Version="1.9.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CountwareTraffic.WorkerServices.Sms.Data\CountwareTraffic.WorkerServices.Sms.Data.csproj" />
+    <ProjectReference Include="..\Sensormatic.Tool.Common\Sensormatic.Tool.Common.csproj" />
+    <ProjectReference Include="..\Sensormatic.Tool.Core\Sensormatic.Tool.Core.csproj" />
+    <ProjectReference Include="..\Sensormatic.Tool.Ioc\Sensormatic.Tool.Ioc.csproj" />
+    <ProjectReference Include="..\Sensormatic.Tool.Sms\Sensormatic.Tool.Sms.csproj" />
+  </ItemGroup>
+
+</Project>

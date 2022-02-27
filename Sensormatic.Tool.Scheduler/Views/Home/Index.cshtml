@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Jobs";
+    ViewData["PageName"] = "Live Jobs";
+    ViewData["IndexActive"] = "active";
+}
+
+@section Scripts
+    {
+    <script src="~/js/live-jobs.js"></script>
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <btn onclick="pauseAll()" class="btn btn-sm btn-outline-warning">Pause All <i class="fa fa-fw fa-pause"></i></btn>
+                <btn onclick="resumeAll()" class="btn btn-sm btn-outline-success">Resume All <i class="fa fa-fw fa-play"></i></btn>
+            </div>
+            <div class="card-body">
+                <div class="content table-responsive table-full-width" style="overflow:auto">
+                    <table class="table table-striped">
+                        <thead class=" text-primary">
+                            <tr>
+                                <th>Job Name</th>
+                                <th>Description</th>
+                                <th>Trigger Description</th>
+                                <th>Previous Fire Time</th>
+                                <th>Next Fire Time</th>
+                                <th>Fire Time</th>
+                                <th>Run Time</th>
+                                <th>Status</th>
+                                <th>Operations</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tblLiveJobs"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

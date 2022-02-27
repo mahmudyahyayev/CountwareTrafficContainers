@@ -1,0 +1,76 @@
+{
+  "Routes": [
+    //Company microservice
+    //Company API
+    {
+      "DownstreamPathTemplate": "/api/v1/SubAreas/{subAreaId}/detail",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "company.api-grpc",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/SubAreas/{subAreaId}/detail",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DangerousAcceptAnyServerCertificateValidator": true
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/SubAreas/{areaId}/details",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "company.api-grpc",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/SubAreas/{areaId}/details",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DangerousAcceptAnyServerCertificateValidator": true
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/SubAreas/{areaId}/add",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "company.api-grpc",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/SubAreas/{areaId}/add",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DangerousAcceptAnyServerCertificateValidator": true
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/SubAreas/{subAreaId}/change",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "company.api-grpc",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/SubAreas/{subAreaId}/change",
+      "UpstreamHttpMethod": [ "PUT" ],
+      "DangerousAcceptAnyServerCertificateValidator": true
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/SubAreas/{subAreaId}/cancel",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "company.api-grpc",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/SubAreas/{subAreaId}/cancel",
+      "UpstreamHttpMethod": [ "DELETE" ],
+      "DangerousAcceptAnyServerCertificateValidator": true
+    }
+    //SubArea API
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:1010"
+  }
+
+}
