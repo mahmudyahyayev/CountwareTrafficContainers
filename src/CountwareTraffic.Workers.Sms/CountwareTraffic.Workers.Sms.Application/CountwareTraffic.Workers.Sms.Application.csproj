@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Convey.CQRS.Commands" Version="0.5.518" />
+    <PackageReference Include="Stubble.Core" Version="1.9.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\BuildingBlocks\Mhd.Framework.Common\Mhd.Framework.Common.csproj" />
+    <ProjectReference Include="..\..\BuildingBlocks\Mhd.Framework.Core\Mhd.Framework.Core.csproj" />
+    <ProjectReference Include="..\..\BuildingBlocks\Mhd.Framework.Ioc\Mhd.Framework.Ioc.csproj" />
+    <ProjectReference Include="..\..\BuildingBlocks\Mhd.Framework.Sms\Mhd.Framework.Sms.csproj" />
+    <ProjectReference Include="..\CountwareTraffic.Workers.Sms.Data\CountwareTraffic.Workers.Sms.Data.csproj" />
+  </ItemGroup>
+
+</Project>

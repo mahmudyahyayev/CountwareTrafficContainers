@@ -165,6 +165,39 @@ services:
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
 
 
+#------------------------------------------------------------------------company-outbox-scheduler----------------------------------------------------------------------------------------------#
+  company-outbox-scheduler:
+    container_name: company-outbox-scheduler
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+     - "3636:80"
+    volumes:
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+#------------------------------------------------------------------------ device-outbox-scheduler----------------------------------------------------------------------------------------------#
+  device-outbox-scheduler:
+    container_name: device-outbox-scheduler
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+     - "2636:80"
+    volumes:
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+#------------------------------------------------------------------------ event-outbox-scheduler----------------------------------------------------------------------------------------------#
+  event-outbox-scheduler:
+    container_name: event-outbox-scheduler
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+     - "1616:80"
+    volumes:
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
 #------------------------------------------------------------------------volumes----------------------------------------------------------------------------------------------#
 volumes:
   countwaretraffic-sqldata:
@@ -172,6 +205,8 @@ volumes:
 
   countwaretraffic-nosqldata:
     external: false
+
+
 
 
 

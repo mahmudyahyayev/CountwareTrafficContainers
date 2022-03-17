@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <DockerComposeProjectPath>..\..\..\docker-compose.dcproj</DockerComposeProjectPath>
+    <UserSecretsId>68b1140b-42b5-42c3-acb4-dd3d7c293451</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Properties\launchSettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.13" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
+    <PackageReference Include="Serilog.Sinks.Graylog" Version="2.2.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\BuildingBlocks\Mhd.Framework.Common\Mhd.Framework.Common.csproj" />
+    <ProjectReference Include="..\..\BuildingBlocks\Mhd.Framework.QueueModel\Mhd.Framework.QueueModel.csproj" />
+    <ProjectReference Include="..\..\BuildingBlocks\Mhd.Framework.RabbitMq\Mhd.Framework.RabbitMq.csproj" />
+    <ProjectReference Include="..\CountwareTraffic.Workers.SignalR.Application\CountwareTraffic.Workers.SignalR.Application.csproj" />
+  </ItemGroup>
+
+</Project>

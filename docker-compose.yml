@@ -44,7 +44,7 @@ services:
     image: company.api-grpc
     build:
       context: .
-      dockerfile: CountwareTraffic.Services.Companies.Api/Dockerfile
+      dockerfile: CountwareTraffic.Services.Area.Api/Dockerfile
       args:
       - NODE_ENV=development
     depends_on:
@@ -60,7 +60,7 @@ services:
     image: device.api-grpc
     build:
       context: .
-      dockerfile: CountwareTraffic.Services.Devices.Api/Dockerfile
+      dockerfile: CountwareTraffic.Services.Device.Api/Dockerfile
       args:
       - NODE_ENV=development
     depends_on:
@@ -76,7 +76,7 @@ services:
     image: event.api-grpc
     build:
       context: .
-      dockerfile: CountwareTraffic.Services.Events.Api/Dockerfile
+      dockerfile: CountwareTraffic.Services.Event.Api/Dockerfile
       args:
       - NODE_ENV=development
     depends_on:
@@ -95,7 +95,7 @@ services:
     image: identityserver.client-grpc
     build:
       context: .
-      dockerfile: CountwareTraffic.Services.Users.Api/Dockerfile
+      dockerfile: CountwareTraffic.Services.Identity.Grpc/Dockerfile
       args:
       - NODE_ENV=development
 
@@ -105,7 +105,7 @@ services:
     image:  sms-consumer
     build:
       context: .
-      dockerfile: CountwareTraffic.WorkerServices.Sms.Consumer/Dockerfile
+      dockerfile: CountwareTraffic.Workers.Sms.Consumer/Dockerfile
       args:
       - NODE_ENV=development
     depends_on:
@@ -122,7 +122,7 @@ services:
     image:  email-consumer
     build:
       context: .
-      dockerfile: CountwareTraffic.WorkerServices.Email.Consumer/Dockerfile
+      dockerfile: CountwareTraffic.Workers.Email.Consumer/Dockerfile
       args:
       - NODE_ENV=development
     depends_on:
@@ -134,12 +134,57 @@ services:
       - rabbitmq
 
 
+#------------------------------------------------------------------------ company-outbox-scheduler-----------------------------------------------------------------------------------#
+  company-outbox-scheduler:
+    image: company-outbox-scheduler
+    build:
+      context: .
+      dockerfile: CountwareTraffic.Services.Area.Outbox.Scheduler/Dockerfile
+      args:
+      - NODE_ENV=development
+    depends_on:
+      - sqldata
+      - rabbitmq
+      - graylog
+    links:
+      - rabbitmq
+
+#------------------------------------------------------------------------  device-outbox-scheduler-----------------------------------------------------------------------------------#
+  device-outbox-scheduler:
+    image: device-outbox-scheduler
+    build:
+      context: .
+      dockerfile: CountwareTraffic.Services.Device.Outbox.Scheduler/Dockerfile
+      args:
+      - NODE_ENV=development
+    depends_on:
+      - sqldata
+      - rabbitmq
+      - graylog
+    links:
+      - rabbitmq
+
+#------------------------------------------------------------------------  event-outbox-scheduler-----------------------------------------------------------------------------------#
+  event-outbox-scheduler:
+    image: event-outbox-scheduler
+    build:
+      context: .
+      dockerfile: CountwareTraffic.Services.Event.Outbox.Scheduler/Dockerfile
+      args:
+      - NODE_ENV=development
+    depends_on:
+      - sqldata
+      - rabbitmq
+      - graylog
+    links:
+      - rabbitmq
+
 #------------------------------------------------------------------------ signalR-consumer----------------------------------------------------------------------------------#
   signalr-consumer:
     image: signalr-consumer
     build:
       context: .
-      dockerfile: CountwareTraffic.WorkerServices.SignalrHub/Dockerfile
+      dockerfile: CountwareTraffic.Workers.SignalrHub/Dockerfile
       args:
       - NODE_ENV=development
     depends_on:
@@ -153,7 +198,7 @@ services:
     image: event-listener-scheduler
     build:
       context: .
-      dockerfile: CountwareTraffic.Services.Events.Listener.Scheduler/Dockerfile
+      dockerfile: CountwareTraffic.Services.Events.Listener/Dockerfile
       args:
       - NODE_ENV=development
     depends_on:
@@ -169,7 +214,7 @@ services:
     image: audit-log-consumer
     build:
       context: .
-      dockerfile: CountwareTraffic.WorkerServices.Audit.Consumer/Dockerfile
+      dockerfile: CountwareTraffic.Workers.Audit.Consumer/Dockerfile
       args:
       - NODE_ENV=development
     depends_on:
@@ -178,6 +223,7 @@ services:
       - graylog
     links:
       - rabbitmq
+
 
 
 #------------------------------------------------------------------------graylog-mongo-elastic-------------------------------------------------------------------------#
@@ -317,6 +363,8 @@ volumes:
     driver: local
   baget-data:
       name: baget-data
+
+
 
 
 

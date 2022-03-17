@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>dotnet-CountwareTraffic.Workers.Audit.Consumer-07B172B2-A8C6-4691-BB55-9051AF94A9D2</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Properties\launchSettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
+    <PackageReference Include="Serilog.Sinks.Graylog" Version="2.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\BuildingBlocks\Mhd.Framework.Common\Mhd.Framework.Common.csproj" />
+    <ProjectReference Include="..\..\BuildingBlocks\Mhd.Framework.QueueModel\Mhd.Framework.QueueModel.csproj" />
+    <ProjectReference Include="..\..\BuildingBlocks\Mhd.Framework.RabbitMq\Mhd.Framework.RabbitMq.csproj" />
+    <ProjectReference Include="..\..\CrossCuttingConcerns\AuditLog\AuditLog.csproj" />
+    <ProjectReference Include="..\CountwareTraffic.Workers.Audit.Application\CountwareTraffic.Workers.Audit.Application.csproj" />
+  </ItemGroup>
+</Project>

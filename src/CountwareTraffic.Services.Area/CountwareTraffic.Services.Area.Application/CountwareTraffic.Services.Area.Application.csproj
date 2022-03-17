@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Convey" Version="0.5.518" />
+    <PackageReference Include="Convey.CQRS.Commands" Version="0.5.518" />
+    <PackageReference Include="Convey.CQRS.Events" Version="0.5.518" />
+    <PackageReference Include="Convey.CQRS.Queries" Version="0.5.518" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\..\BuildingBlocks\Mhd.Framework.Common\Mhd.Framework.Common.csproj" />
+    <ProjectReference Include="..\..\BuildingBlocks\Mhd.Framework.QueueModel\Mhd.Framework.QueueModel.csproj" />
+    <ProjectReference Include="..\..\BuildingBlocks\Mhd.Framework.RabbitMq\Mhd.Framework.RabbitMq.csproj" />
+    <ProjectReference Include="..\CountwareTraffic.Services.Area.Core\CountwareTraffic.Services.Area.Core.csproj" />
+  </ItemGroup>
+
+</Project>

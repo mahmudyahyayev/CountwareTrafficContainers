@@ -1,0 +1,72 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+    <UserSecretsId>e338d7cc-9a62-4c64-bb81-e522810f0544</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Grpc\Protos\area.proto" />
+    <None Remove="Grpc\Protos\baseArea.proto" />
+    <None Remove="Grpc\Protos\baseDevice.proto" />
+    <None Remove="Grpc\Protos\city.proto" />
+    <None Remove="Grpc\Protos\company.proto" />
+    <None Remove="Grpc\Protos\country.proto" />
+    <None Remove="Grpc\Protos\device.proto" />
+    <None Remove="Grpc\Protos\district.proto" />
+    <None Remove="Grpc\Protos\subarea.proto" />
+    <None Remove="Grpc\Protos\user.proto" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.19.1" />
+    <PackageReference Include="Grpc.AspNetCore.Web" Version="2.41.0" />
+    <PackageReference Include="Grpc.Net.Client.Web" Version="2.41.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.41.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.13" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.11.1" />
+    <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
+    <PackageReference Include="Serilog.Sinks.Graylog" Version="2.2.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\BuildingBlocks\Mhd.Framework.Api\Mhd.Framework.Api.csproj" />
+    <ProjectReference Include="..\..\BuildingBlocks\Mhd.Framework.Common\Mhd.Framework.Common.csproj" />
+    <ProjectReference Include="..\..\BuildingBlocks\Mhd.Framework.Grpc\Mhd.Framework.Grpc.csproj" />
+    <ProjectReference Include="..\..\BuildingBlocks\Mhd.Framework.Ioc\Mhd.Framework.Ioc.csproj" />
+    <ProjectReference Include="..\..\CrossCuttingConcerns\Observability\Observability.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="Grpc\Protos\area.proto" GrpcServices="Client">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Protobuf>
+    <Protobuf Include="Grpc\Protos\baseArea.proto">
+      <GrpcServices>Client</GrpcServices>
+    </Protobuf>
+    <Protobuf Include="Grpc\Protos\baseDevice.proto" GrpcServices="Client" />
+    <Protobuf Include="Grpc\Protos\city.proto" GrpcServices="Client" />
+    <Protobuf Include="Grpc\Protos\company.proto" GrpcServices="Client" />
+    <Protobuf Include="Grpc\Protos\country.proto" GrpcServices="Client" />
+    <Protobuf Include="Grpc\Protos\device.proto" GrpcServices="Client" />
+    <Protobuf Include="Grpc\Protos\district.proto" GrpcServices="Client" />
+    <Protobuf Include="Grpc\Protos\subarea.proto">
+      <GrpcServices>Client</GrpcServices>
+    </Protobuf>
+    <Protobuf Include="Grpc\Protos\user.proto" GrpcServices="Client" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Mobile.BFF.CountwareTraffic.HttpAggregator.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

@@ -3,10 +3,10 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>523e2226-9b96-4006-a385-09065199f09a</ProjectGuid>
+    <ProjectGuid>56f3d29e-a3e6-449b-99c9-0361118c5405</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
-    <DockerServiceName>countwaretraffic.services.companies.api</DockerServiceName>
+    <DockerServiceName>countwaretraffic.services.area.api</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">

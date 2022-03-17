@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\BuildingBlocks\Mhd.Framework.Ioc\Mhd.Framework.Ioc.csproj" />
+    <ProjectReference Include="..\..\BuildingBlocks\Mhd.Framework.MongoDb\Mhd.Framework.MongoDb.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\BuildingBlocks\Mhd.Framework.Core\Mhd.Framework.Core.csproj" />
+    <ProjectReference Include="..\..\BuildingBlocks\Mhd.Framework.Efcore\Mhd.Framework.Efcore.csproj" />
+    <ProjectReference Include="..\..\BuildingBlocks\Mhd.Framework.Ioc\Mhd.Framework.Ioc.csproj" />
+  </ItemGroup>
+
+</Project>

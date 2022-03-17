@@ -1,0 +1,83 @@
+syntax = "proto3";
+
+option csharp_namespace = "CountwareTraffic.Services.Areas.Grpc";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+import "Grpc/Protos/baseArea.proto";
+
+package country;
+
+service Country {
+	rpc GetCountryById(GetCountryRequest) returns (GetCountryDetailResponse){}
+    rpc GetCountries(GetCountriesRequest) returns (CountryPagingResponse){}
+    rpc ChangeCountry(UpdateCountryRequest) returns (baseArea.UpdateSuccessResponse){}
+    rpc DeleteCountry(DeleteCountryRequest) returns (baseArea.DeleteSuccessResponse){}
+    rpc AddCountry(CreateCountryRequest) returns (baseArea.CreateSuccessResponse){}
+}
+
+/*REQUESTS*/
+message GetCountryRequest {
+	string CountryId = 1;
+}
+
+message GetCountriesRequest {
+	string CompanyId = 1;
+    baseArea.PagingRequest PagingRequest = 2;
+}
+
+message UpdateCountryRequest{
+    string CountryId = 1;
+    string Name = 2;
+    google.protobuf.Int32Value IsoNumeric = 3;
+    google.protobuf.StringValue Iso = 4;
+    google.protobuf.StringValue Iso3 = 5;
+    google.protobuf.StringValue Capital = 6;
+    google.protobuf.StringValue ContinentCode = 7;
+    google.protobuf.StringValue CurrencyCode = 8;
+}
+
+message DeleteCountryRequest{
+    string CountryId = 1;
+}
+
+message CreateCountryRequest{
+    string CompanyId = 1;
+    string Name = 2;
+    google.protobuf.Int32Value IsoNumeric = 3;
+    google.protobuf.StringValue Iso = 4;
+    google.protobuf.StringValue Iso3 = 5;
+    google.protobuf.StringValue Capital = 6;
+    google.protobuf.StringValue ContinentCode = 7;
+    google.protobuf.StringValue CurrencyCode = 8;
+}
+
+/*RESPONSES*/
+message CountryPagingResponse {
+    int32 TotalCount = 1;
+    int32 Page = 2;
+    int32 Limit = 3;
+    bool HasNextPage = 4;
+    google.protobuf.Int32Value Next = 5;
+    google.protobuf.Int32Value Prev = 6;
+    repeated CountryDetail CountryDetails  = 7;
+}
+
+message GetCountryDetailResponse {
+    CountryDetail CountryDetail  = 1;
+}
+
+/*MODELS*/
+message CountryDetail
+{
+    string Id = 1;
+    baseArea.Audit Audit = 2;
+    string CompanyId = 3;
+    string Name = 4;
+    google.protobuf.Int32Value IsoNumeric = 5;
+    google.protobuf.StringValue Iso = 6;
+    google.protobuf.StringValue Iso3 = 7;
+    google.protobuf.StringValue Capital = 8;
+    google.protobuf.StringValue ContinentCode = 9;
+    google.protobuf.StringValue CurrencyCode = 10;
+}

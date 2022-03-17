@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="StackExchange.Redis" Version="2.2.88" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Mhd.Framework.Common\Mhd.Framework.Common.csproj" />
+    <ProjectReference Include="..\Mhd.Framework.Core\Mhd.Framework.Core.csproj" />
+    <ProjectReference Include="..\Mhd.Framework.Ioc\Mhd.Framework.Ioc.csproj" />
+  </ItemGroup>
+
+</Project>

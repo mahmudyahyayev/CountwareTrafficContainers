@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <DockerComposeProjectPath>..\..\..\docker-compose.dcproj</DockerComposeProjectPath>
+    <UserSecretsId>c73d4971-6b83-4396-b97d-8a573cb93587</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Grpc\Protos\area.proto" />
+    <None Remove="Grpc\Protos\baseArea.proto" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Properties\launchSettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.19.1" />
+    <PackageReference Include="Grpc.AspNetCore" Version="2.41.0" />
+    <PackageReference Include="Grpc.AspNetCore.Web" Version="2.41.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.13" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
+    <PackageReference Include="Serilog.Sinks.Graylog" Version="2.2.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\BuildingBlocks\Mhd.Framework.Api\Mhd.Framework.Api.csproj" />
+    <ProjectReference Include="..\..\BuildingBlocks\Mhd.Framework.Grpc\Mhd.Framework.Grpc.csproj" />
+    <ProjectReference Include="..\CountwareTraffic.Services.Area.Infrastructure\CountwareTraffic.Services.Area.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="Grpc\Protos\area.proto" GrpcServices="Server">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Protobuf>
+    <Protobuf Include="Grpc\Protos\baseArea.proto" GrpcServices="Server" />
+    <Protobuf Include="Grpc\Protos\city.proto" GrpcServices="Server" />
+    <Protobuf Include="Grpc\Protos\company.proto" GrpcServices="Server" />
+    <Protobuf Include="Grpc\Protos\country.proto" GrpcServices="Server" />
+    <Protobuf Include="Grpc\Protos\district.proto" GrpcServices="Server" />
+    <Protobuf Include="Grpc\Protos\subarea.proto" GrpcServices="Server" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="CountwareTraffic.Services.Area.Api.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

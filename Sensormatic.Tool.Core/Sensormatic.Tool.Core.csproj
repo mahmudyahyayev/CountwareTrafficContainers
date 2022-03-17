@@ -1,8 +1,0 @@
-<Project Sdk="Microsoft.NET.Sdk">
-	<PropertyGroup>
-		<TargetFramework>net5.0</TargetFramework>
-		<PackageLicenseExpression>Sensormatic</PackageLicenseExpression>
-		<Description>This is Core Structure</Description>
-		<Version>1.0.1</Version>
-	</PropertyGroup>
-</Project>

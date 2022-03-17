@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Commands\Handlers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Convey.CQRS.Commands" Version="0.5.518" />
+    <PackageReference Include="Convey.CQRS.Queries" Version="0.5.518" />
+    <PackageReference Include="Jil" Version="2.17.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\BuildingBlocks\Mhd.Framework.Core\Mhd.Framework.Core.csproj" />
+    <ProjectReference Include="..\..\BuildingBlocks\Mhd.Framework.Ioc\Mhd.Framework.Ioc.csproj" />
+    <ProjectReference Include="..\..\CrossCuttingConcerns\Observability\Observability.csproj" />
+  </ItemGroup>
+
+</Project>
