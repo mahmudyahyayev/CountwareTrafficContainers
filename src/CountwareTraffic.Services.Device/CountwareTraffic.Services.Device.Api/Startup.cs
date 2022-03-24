@@ -88,7 +88,7 @@ namespace CountwareTraffic.Services.Devices.Api
                .UseRouting()
                .UseAuthentication()
                .UseAuthorization()
-               .UseSensormaticExceptionMiddleware()
+               .UseExceptionMiddleware()
                .UseCors("AllowAll")
                .UseGrpcWeb()
                .UserCorrelationId()

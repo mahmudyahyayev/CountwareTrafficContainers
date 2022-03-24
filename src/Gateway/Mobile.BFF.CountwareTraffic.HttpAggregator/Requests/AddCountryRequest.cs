@@ -2,7 +2,7 @@
 
 namespace Mobile.BFF.CountwareTraffic.HttpAggregator
 {
-    public class AddCountryRequest : SensormaticRequestValidate
+    public class AddCountryRequest : RequestValidate
     {
         public string Iso { get; set; }
         public string Iso3 { get; set; }

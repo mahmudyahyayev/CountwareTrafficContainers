@@ -2,7 +2,7 @@
 
 namespace CountwareTraffic.Services.Areas.Api
 {
-    public class CreateCompanyRequest : SensormaticRequestValidate
+    public class CreateCompanyRequest : RequestValidate
     {
         public string Name { get; set; }
         public string Description { get; set; }

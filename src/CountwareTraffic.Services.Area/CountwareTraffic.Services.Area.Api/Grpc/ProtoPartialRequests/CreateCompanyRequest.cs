@@ -5,7 +5,7 @@ using System;
 namespace CountwareTraffic.Services.Areas.Grpc
 {
     [ServiceLog]
-    public sealed partial class CreateCompanyRequest : SensormaticRequestValidate
+    public sealed partial class CreateCompanyRequest : RequestValidate
     {
         public override void Validate()
         {

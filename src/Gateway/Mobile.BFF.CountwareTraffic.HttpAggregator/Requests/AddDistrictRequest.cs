@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mobile.BFF.CountwareTraffic.HttpAggregator
 {
-    public class AddDistrictRequest : SensormaticRequestValidate
+    public class AddDistrictRequest : RequestValidate
     {
         public string Name { get; set; }
 

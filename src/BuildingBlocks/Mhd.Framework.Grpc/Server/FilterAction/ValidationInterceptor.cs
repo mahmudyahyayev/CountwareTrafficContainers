@@ -60,7 +60,7 @@ namespace Mhd.Framework.Grpc.Server
 
         private new async Task ValidateRequestAsync<TRequest>(TRequest request, ServerCallContext context) where TRequest : class
         {
-            if (request is SensormaticRequestValidate etaRequestValidate)
+            if (request is RequestValidate etaRequestValidate)
             {
                 etaRequestValidate.Validate();
 

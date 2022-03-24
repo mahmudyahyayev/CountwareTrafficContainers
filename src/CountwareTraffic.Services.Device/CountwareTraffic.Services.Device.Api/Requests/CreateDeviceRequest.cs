@@ -4,7 +4,7 @@ using System.Net;
 
 namespace CountwareTraffic.Services.Devices.Api
 {
-    public class CreateDeviceRequest : SensormaticRequestValidate
+    public class CreateDeviceRequest : RequestValidate
     {
         public string Name { get; set; }
         public string Description { get; set; }

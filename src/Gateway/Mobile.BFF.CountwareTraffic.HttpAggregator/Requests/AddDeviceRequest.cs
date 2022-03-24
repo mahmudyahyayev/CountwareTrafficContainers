@@ -4,7 +4,7 @@ using System.Net;
 
 namespace Mobile.BFF.CountwareTraffic.HttpAggregator
 {
-    public class AddDeviceRequest : SensormaticRequestValidate
+    public class AddDeviceRequest : RequestValidate
     {
         public string Name { get; set; }
         public string Description { get; set; }

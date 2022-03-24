@@ -4,9 +4,9 @@ using System.Linq;
 
 namespace Mhd.Framework.Core
 {
-    public abstract class SensormaticRequestValidate : ISensormaticRequest, ISensormaticValidator
+    public abstract class RequestValidate : IRequest, IValidator
     {
-        public SensormaticRequestValidate() => ValidateResults = new HashSet<ErrorResult>();
+        public RequestValidate() => ValidateResults = new HashSet<ErrorResult>();
 
         [DoNotSerialize]
         public bool IsValid => !ValidateResults.Any();

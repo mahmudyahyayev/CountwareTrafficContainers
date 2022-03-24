@@ -84,7 +84,7 @@ namespace CountwareTraffic.Services.Areas.Api
                .UseRouting()
                .UseAuthentication()
                .UseAuthorization()
-               .UseSensormaticExceptionMiddleware()
+               .UseExceptionMiddleware()
                .UseCors("AllowAll")
                .UseGrpcWeb()
                .UserCorrelationId()

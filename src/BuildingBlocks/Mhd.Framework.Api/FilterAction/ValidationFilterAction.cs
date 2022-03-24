@@ -19,9 +19,9 @@ namespace Mhd.Framework.Api
 
             foreach (var value in context.ActionArguments.Values)
             {
-                var validInfoArray = value as ISensormaticRequest[] ?? new ISensormaticRequest[] { value as ISensormaticRequest }.Where(w => null != w);
+                var validInfoArray = value as IRequest[] ?? new IRequest[] { value as IRequest }.Where(w => null != w);
 
-                var validArray = value as SensormaticRequestValidate[] ?? new SensormaticRequestValidate[] { value as SensormaticRequestValidate }.Where(w => null != w);
+                var validArray = value as RequestValidate[] ?? new RequestValidate[] { value as RequestValidate }.Where(w => null != w);
 
                 foreach (var valid in validArray)
                 {

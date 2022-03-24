@@ -65,7 +65,7 @@ namespace Mobile.BFF.CountwareTraffic.HttpAggregator
                .UseAuthorization()
                .UseGrpcWeb()
                .UserCorrelationId()
-               .UseSensormaticExceptionMiddleware()
+               .UseExceptionMiddleware()
                .UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
     }

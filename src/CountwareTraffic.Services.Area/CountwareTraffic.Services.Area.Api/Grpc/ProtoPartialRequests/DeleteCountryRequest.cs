@@ -4,7 +4,7 @@ using System;
 namespace CountwareTraffic.Services.Areas.Grpc
 {
     [ServiceLog]
-    public sealed partial class DeleteCountryRequest : SensormaticRequestValidate
+    public sealed partial class DeleteCountryRequest : RequestValidate
     {
         internal Guid _CountryId
         {

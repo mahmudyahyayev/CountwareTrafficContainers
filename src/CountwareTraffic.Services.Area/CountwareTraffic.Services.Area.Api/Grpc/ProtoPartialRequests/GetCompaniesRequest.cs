@@ -3,7 +3,7 @@
 namespace CountwareTraffic.Services.Areas.Grpc
 {
     [ServiceLog]
-    public sealed partial class GetCompaniesRequest  : SensormaticRequestValidate
+    public sealed partial class GetCompaniesRequest  : RequestValidate
     {
         internal PagingRequest _PagingRequest
         {

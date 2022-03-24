@@ -2,7 +2,7 @@
 
 namespace Mobile.BFF.CountwareTraffic.HttpAggregator
 {
-    public class AddSubAreaRequest : SensormaticRequestValidate
+    public class AddSubAreaRequest : RequestValidate
     {
         public string Name { get; set; }
         public string Description { get; set; }

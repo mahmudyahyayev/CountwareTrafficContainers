@@ -73,7 +73,7 @@ namespace CountwareTraffic.Services.Events.Api
             app.UseRouting();
             app.UseAuthorization();
             app.UserCorrelationId();
-            app.UseSensormaticExceptionMiddleware();
+            app.UseExceptionMiddleware();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

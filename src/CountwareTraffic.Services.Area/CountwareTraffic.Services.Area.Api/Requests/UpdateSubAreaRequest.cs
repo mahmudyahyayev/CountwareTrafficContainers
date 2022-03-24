@@ -2,7 +2,7 @@
 
 namespace CountwareTraffic.Services.Areas.Api
 {
-    public class UpdateSubAreaRequest : SensormaticRequestValidate
+    public class UpdateSubAreaRequest : RequestValidate
     {
         public string Name { get; set; }
         public string Description { get; set; }

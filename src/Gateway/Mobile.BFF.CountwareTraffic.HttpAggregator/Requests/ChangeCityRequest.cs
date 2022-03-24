@@ -2,7 +2,7 @@
 
 namespace Mobile.BFF.CountwareTraffic.HttpAggregator
 {
-    public class ChangeCityRequest :  SensormaticRequestValidate
+    public class ChangeCityRequest :  RequestValidate
     {
         public string Name { get; set; }
         public override void Validate()

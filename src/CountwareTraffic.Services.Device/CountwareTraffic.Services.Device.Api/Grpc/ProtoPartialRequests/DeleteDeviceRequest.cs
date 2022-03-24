@@ -4,7 +4,7 @@ using System;
 namespace CountwareTraffic.Services.Devices.Grpc
 {
     [ServiceLog]
-    public sealed partial class DeleteDeviceRequest : SensormaticRequestValidate
+    public sealed partial class DeleteDeviceRequest : RequestValidate
     {
         internal Guid _DeviceId
         {

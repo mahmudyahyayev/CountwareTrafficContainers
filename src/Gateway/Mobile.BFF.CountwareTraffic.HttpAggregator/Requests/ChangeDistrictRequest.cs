@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mobile.BFF.CountwareTraffic.HttpAggregator
 {
-    public class ChangeDistrictRequest : SensormaticRequestValidate
+    public class ChangeDistrictRequest : RequestValidate
     {
         public string Name { get; set; }
         public override void Validate()

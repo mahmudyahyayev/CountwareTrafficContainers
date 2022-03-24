@@ -2,7 +2,7 @@
 
 namespace CountwareTraffic.Services.Devices.Api
 {
-    public class UpdateDeviceRequest : SensormaticRequestValidate
+    public class UpdateDeviceRequest : RequestValidate
     {
         public string Name { get; set; }
         public string Description { get; set; }

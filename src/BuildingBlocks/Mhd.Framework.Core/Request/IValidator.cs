@@ -1,6 +1,6 @@
 ﻿namespace Mhd.Framework.Core
 {
-    public interface ISensormaticValidator : ISensormaticValidate
+    public interface IValidator : IValidate
     {
         void Validate();
     }

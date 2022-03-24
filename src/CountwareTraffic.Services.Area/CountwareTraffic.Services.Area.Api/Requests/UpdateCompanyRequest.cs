@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CountwareTraffic.Services.Areas.Api
 {
-    public class UpdateCompanyRequest : SensormaticRequestValidate
+    public class UpdateCompanyRequest : RequestValidate
     {
         public string Name { get; set; }
         public string Description { get; set; }
