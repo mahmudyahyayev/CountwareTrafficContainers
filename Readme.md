@@ -23,3 +23,33 @@ Read Model - Varies according to microservices
 Write Model - Domain Driven Design approach (using Entity Framework Core).
 
 Commands/Queries/Domain Events handling using Convey library.
+
+## Efcore
+todo
+
+## Auto Scale RabbitMQ
+todo
+
+## Elastic
+todo
+
+## SAGA
+todo
+
+## Outbox Pattern
+todo
+
+## gRPC
+todo
+
+## Validation
+todo
+
+## Caching
+todo
+
+## Related blog articles
+todo
+
+## How to run application
+todo
