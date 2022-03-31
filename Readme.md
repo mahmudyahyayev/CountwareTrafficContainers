@@ -16,6 +16,8 @@ todo
 <img src="img/CountwareContainer_Types_Of_Microservices.png">
 <p>
 <p>
+![Different types of microservices](https://github.com/mahmudyahyayev/CountwareTrafficContainers/blob/main/img/CountwareContainer_Types_Of_Microservices.PNG)
+
 
 ## CQRS
 Read Model - Varies according to microservices
