@@ -34,7 +34,7 @@ todo
 todo
 
 ## SAGA
-Each service has its own database. Data consistency has been preserved using [Choreography-based saga] (https://microservices.io/patterns/data/saga.html)
+Each service has its own database. Data consistency has been preserved using [Choreography-based saga](https://microservices.io/patterns/data/saga.html)
 
 
 ## Outbox Pattern
