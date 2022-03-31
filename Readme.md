@@ -39,7 +39,7 @@ todo
 ## Outbox Pattern
 Outbox Pattern implementation using [Quartz.NET](https://github.com/quartznet/quartznet) | [Mhd.Framework.Scheduler](https://github.com/mahmudyahyayev/CountwareTrafficContainers/tree/main/src/BuildingBlocks/Mhd.Framework.Scheduler)
 
-<img  src="https://github.com/mahmudyahyayev/CountwareTrafficContainers/blob/main/img/CountwareContainer_Types_Of_Microservices.PNG?raw=true"></img> 
+<img  src="https://github.com/mahmudyahyayev/CountwareTrafficContainers/blob/main/img/CountwareContainer_Outbox_Db_Table.PNG?raw=true"></img> 
 
 ## gRPC
 todo
