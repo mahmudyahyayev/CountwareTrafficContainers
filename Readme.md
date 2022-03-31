@@ -12,6 +12,7 @@ todo
 
 ### Internal architecture and design of the microservices
 > The microservices are different in type, meaning different internal architecture pattern approaches depending on its purpose, as shown in the image below.
+
 <img  src="https://github.com/mahmudyahyayev/CountwareTrafficContainers/blob/main/img/CountwareContainer_Types_Of_Microservices.PNG?raw=true"></img> 
 
 ## CQRS
