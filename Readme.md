@@ -16,7 +16,7 @@ todo
 
 ## CQRS
 Read Model - Varies according to microservices
- 1. Executing IQuarable queries by  Entity Framework Core (using Entity Framework Core) 
+ 1. Executing IQueryable queries by  Entity Framework Core (using Entity Framework Core) 
  2.  By running elastic queries (using Nest Elastic)
 
 Write Model - Domain Driven Design approach (using Entity Framework Core).
