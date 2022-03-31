@@ -34,7 +34,8 @@ todo
 todo
 
 ## SAGA
-todo
+Each service has its own database. Data consistency has been preserved using [Choreography-based saga] (https://microservices.io/patterns/data/saga.html)
+
 
 ## Outbox Pattern
 Outbox Pattern implementation using [Quartz.NET](https://github.com/quartznet/quartznet) | [Mhd.Framework.Scheduler](https://github.com/mahmudyahyayev/CountwareTrafficContainers/tree/main/src/BuildingBlocks/Mhd.Framework.Scheduler)
