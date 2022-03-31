@@ -5,8 +5,17 @@
 If you like this project, learn something or you are using it in your applications, please give it a star. Thanks!
 
 ## Description
+todo
 
+## IMPORTANT NOTES!
+**You can use either the latest version of Visual Studio or simply Docker CLI and .NET CLI for Windows, Mac and Linux**.
 
+### Internal architecture and design of the microservices
+> The microservices are different in type, meaning different internal architecture pattern approaches depending on its purpose, as shown in the image below.
+<p>
+<img src="img/CountwareContainer_Types_Of_Microservices.png">
+<p>
+<p>
 
 ## CQRS
 Read Model - Varies according to microservices
