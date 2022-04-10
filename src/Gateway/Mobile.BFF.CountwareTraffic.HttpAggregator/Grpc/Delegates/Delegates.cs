@@ -5,7 +5,7 @@ using System.Threading;
 namespace Mobile.BFF.CountwareTraffic.HttpAggregator.Grpc
 {
     /// <summary>
-    /// Tum unary metotlari try catch icerisinde call ede bilmek icin yazilmisdir. mahmud yhayayev
+    /// 
     /// </summary>
     /// <typeparam name="TRequest"></typeparam>
     /// <typeparam name="TResponse"></typeparam>
