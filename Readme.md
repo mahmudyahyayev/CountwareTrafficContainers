@@ -28,7 +28,11 @@ Commands/Queries/Domain Events handling using Convey library.
 todo
 
 ## Auto Scale RabbitMQ
-todo
+RabbitMQ implementation using [Mhd.Framework.RabbitMq](https://github.com/mahmudyahyayev/CountwareTrafficContainers/tree/main/src/BuildingBlocks/Mhd.Framework.RabbitMq)
+Queues
+<img  src="https://github.com/mahmudyahyayev/CountwareTrafficContainers/blob/main/img/CountwareContainer_RabbitMQ_Queues.PNG?raw=true"></img>
+Exchanges
+<img  src="https://github.com/mahmudyahyayev/CountwareTrafficContainers/blob/main/img/CountwareContainer_RabbitMQ_Exchanges.PNG?raw=true"></img>
 
 ## Elastic
 todo
